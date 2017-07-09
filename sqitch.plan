@@ -27,3 +27,4 @@ view/users_of_gateway [schema-beeeon table/gateways table/roles_in_gateway table
 view/legacy_gateways [schema-beeeon table/gateways table/roles_in_gateway table/devices table/verified_identities] 2017-07-09T22:29:48Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new view legacy_gateways
 func/gateways_insert [schema-beeeon table/gateways] 2017-07-09T22:47:49Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement gateways_insert
 func/gateways_update [schema-beeeon table/gateways] 2017-07-09T22:51:54Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement gateways_update
+func/gateways_status_most_recent [schema-beeeon table/gateways_status] 2017-07-09T23:52:28Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement gateways_status_most_recent

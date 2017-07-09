@@ -25,3 +25,4 @@ table/roles_in_gateway [schema-beeeon table/gateways table/identities] 2017-07-0
 table/sensor_history_recent [schema-beeeon table/devices table/gateways type/sensor_value] 2017-07-17T15:12:30Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table sensor_history_recent
 view/users_of_gateway [schema-beeeon table/gateways table/roles_in_gateway table/verified_identities] 2017-07-09T21:57:43Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new view users_of_gateway
 view/legacy_gateways [schema-beeeon table/gateways table/roles_in_gateway table/devices table/verified_identities] 2017-07-09T22:29:48Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new view legacy_gateways
+func/gateways_insert [schema-beeeon table/gateways] 2017-07-09T22:47:49Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement gateways_insert

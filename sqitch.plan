@@ -18,3 +18,4 @@ table/gateways_status [table/gateways schema-beeeon] 2017-07-09T17:38:26Z Jan Vi
 table/locations [schema-beeeon table/gateways] 2017-07-09T17:45:03Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table locations
 table/users [schema-beeeon] 2017-07-09T17:48:33Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table users
 table/identities [schema-beeeon] 2017-07-09T17:52:38Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table identities
+table/verified_identities [schema-beeeon table/users table/identities] 2017-07-09T18:23:43Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table verified_identities

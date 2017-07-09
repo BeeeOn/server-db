@@ -20,3 +20,4 @@ table/users [schema-beeeon] 2017-07-09T17:48:33Z Jan Viktorin <iviktorin@fit.vut
 table/identities [schema-beeeon] 2017-07-09T17:52:38Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table identities
 table/verified_identities [schema-beeeon table/users table/identities] 2017-07-09T18:23:43Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table verified_identities
 table/devices [schema-beeeon table/gateways table/locations] 2017-07-09T18:01:50Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table devices
+table/device_properties [schema-beeeon table/devices table/gateways] 2017-07-09T18:14:48Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table device_properties

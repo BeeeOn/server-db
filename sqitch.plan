@@ -23,3 +23,4 @@ table/devices [schema-beeeon table/gateways table/locations] 2017-07-09T18:01:50
 table/device_properties [schema-beeeon table/devices table/gateways] 2017-07-09T18:14:48Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table device_properties
 table/roles_in_gateway [schema-beeeon table/gateways table/identities] 2017-07-09T21:28:17Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table roles_in_gateway
 table/sensor_history_recent [schema-beeeon table/devices table/gateways type/sensor_value] 2017-07-17T15:12:30Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table sensor_history_recent
+view/users_of_gateway [schema-beeeon table/gateways table/roles_in_gateway table/verified_identities] 2017-07-09T21:57:43Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new view users_of_gateway

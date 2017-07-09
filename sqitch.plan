@@ -13,3 +13,4 @@ type/device [schema-beeeon] 2017-07-11T14:23:06Z Jan Viktorin <iviktorin@fit.vut
 type/device_property [schema-beeeon] 2017-07-14T12:15:52Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type device_property
 type/role_in_gateway [schema-beeeon] 2017-07-11T16:07:05Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type role_in_gateway
 type/sensor_value [schema-beeeon] 2017-07-17T14:54:35Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type sensor_value
+table/gateways [schema-beeeon] 2017-07-09T17:28:13Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table gateways

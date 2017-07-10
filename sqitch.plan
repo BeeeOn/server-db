@@ -39,3 +39,4 @@ func/locations_remove [schema-beeeon table/locations] 2017-07-10T14:41:49Z Jan V
 func/locations_by_id_and_gateway [schema-beeeon type/location table/locations] 2017-07-17T10:57:42Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement locations_by_id_and_gateway
 func/users_insert [schema-beeeon table/users] 2017-07-10T15:28:07Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement users_insert
 func/users_by_id [schema-beeeon table/users] 2017-07-10T15:42:12Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement users_by_id
+func/identities_insert [schema-beeeon table/identities] 2017-07-10T15:47:41Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement identities_insert

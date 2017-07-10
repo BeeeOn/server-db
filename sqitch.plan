@@ -29,3 +29,4 @@ func/gateways_insert [schema-beeeon table/gateways] 2017-07-09T22:47:49Z Jan Vik
 func/gateways_update [schema-beeeon table/gateways] 2017-07-09T22:51:54Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement gateways_update
 func/gateways_status_most_recent [schema-beeeon table/gateways_status] 2017-07-09T23:52:28Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement gateways_status_most_recent
 func/gateways_by_id [schema-beeeon type/gateway_with_status table/gateways table/gateways_status func/gateways_status_most_recent] 2017-07-09T22:57:41Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement gateways_by_id
+func/gateways_accessible [schema-beeeon type/gateway_with_status table/gateways table/roles_in_gateway table/gateways_status table/verified_identities func/gateways_status_most_recent] 2017-07-10T09:05:55Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement gateways_accessible

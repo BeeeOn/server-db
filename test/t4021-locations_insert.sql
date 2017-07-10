@@ -1,0 +1,48 @@
+SET client_min_messages TO warning;
+CREATE EXTENSION IF NOT EXISTS pgtap;
+RESET client_min_messages;
+
+SET search_path TO beeeon, public;
+
+BEGIN;
+
+SELECT plan(5);
+
+SELECT has_function('locations_insert');
+
+SELECT throws_ok(
+	$$ SELECT locations_insert('36dd0e4c-e049-44e1-be03-0c7bbca705f2', 'Living room', 1509106553732838) $$,
+	23503,
+	NULL,
+	'cannot insert location associated with a non-existing gateway'
+);
+
+INSERT INTO gateways (id, name, altitude, latitude, longitude)
+VALUES (1509106553732838, 'MyHome', 0, 0.0, 0.0);
+
+SELECT lives_ok(
+	$$ SELECT locations_insert('36dd0e4c-e049-44e1-be03-0c7bbca705f2', 'Living room', 1509106553732838) $$,
+	'location should be inserted associated with the existing gateway 1509106553732838'
+);
+
+SELECT ok(EXISTS(
+	SELECT 1 FROM locations
+	WHERE
+		id = '36dd0e4c-e049-44e1-be03-0c7bbca705f2'
+		AND
+		name = 'Living room'
+		AND
+		gateway_id = 1509106553732838
+	),
+	'location of ID 36dd0e4c-e049-44e1-be03-0c7bbca705f2 should have been inserted'
+);
+
+SELECT throws_ok(
+	$$ SELECT locations_insert('36dd0e4c-e049-44e1-be03-0c7bbca705f2', 'Living room', 1509106553732838) $$,
+	23505,
+	NULL,
+	'primary key violation when creating the same location twice'
+);
+
+SELECT finish();
+ROLLBACK;

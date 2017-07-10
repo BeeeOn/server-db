@@ -34,3 +34,4 @@ func/gateways_status_insert_or_skip [schema-beeeon table/gateways_status] 2017-0
 func/locations_insert [schema-beeeon table/locations] 2017-07-10T10:39:15Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement locations_insert
 func/locations_by_id [schema-beeeon type/location table/locations] 2017-07-10T14:21:59Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement locations_by_id
 func/locations_by_gateway [schema-beeeon type/location table/locations] 2017-07-10T14:26:52Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement locations_by_gateway
+func/locations_update [schema-beeeon table/locations] 2017-07-10T14:30:42Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement locations_update

@@ -8,3 +8,4 @@ type/legacy_gateway [schema-beeeon] 2017-07-13T13:36:45Z Jan Viktorin <iviktorin
 type/location [schema-beeeon] 2017-07-14T15:28:29Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type location
 type/identity [schema-beeeon] 2017-07-14T13:40:13Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type identity
 type/verified_identity [schema-beeeon] 2017-07-11T13:33:40Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type verified_identity
+type/user [schema-beeeon] 2017-07-11T14:21:31Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type user

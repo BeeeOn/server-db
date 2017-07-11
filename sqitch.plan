@@ -52,3 +52,4 @@ func/verified_identities_remove [schema-beeeon table/verified_identities] 2017-0
 func/roles_in_gateway_insert [schema-beeeon table/roles_in_gateway] 2017-07-11T14:40:48Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement roles_in_gateway_insert
 func/roles_in_gateway_update [schema-beeeon table/roles_in_gateway] 2017-07-11T15:48:55Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement roles_in_gateway_update
 func/roles_in_gateway_by_id [schema-beeeon type/role_in_gateway table/roles_in_gateway table/identities] 2017-07-11T16:02:04Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement roles_in_gateway_by_id
+func/roles_in_gateway_by_gateway [schema-beeeon type/role_in_gateway table/roles_in_gateway table/identities] 2017-07-11T18:04:25Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement roles_in_gateway_by_gateway

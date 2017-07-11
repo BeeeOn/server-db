@@ -11,3 +11,4 @@ type/verified_identity [schema-beeeon] 2017-07-11T13:33:40Z Jan Viktorin <ivikto
 type/user [schema-beeeon] 2017-07-11T14:21:31Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type user
 type/device [schema-beeeon] 2017-07-11T14:23:06Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type device
 type/device_property [schema-beeeon] 2017-07-14T12:15:52Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type device_property
+type/role_in_gateway [schema-beeeon] 2017-07-11T16:07:05Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type role_in_gateway

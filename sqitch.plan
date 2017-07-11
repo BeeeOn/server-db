@@ -41,3 +41,4 @@ func/users_insert [schema-beeeon table/users] 2017-07-10T15:28:07Z Jan Viktorin 
 func/users_by_id [schema-beeeon table/users] 2017-07-10T15:42:12Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement users_by_id
 func/identities_insert [schema-beeeon table/identities] 2017-07-10T15:47:41Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement identities_insert
 func/identities_by_id [schema-beeeon type/identity table/identities] 2017-07-10T18:07:53Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement identities_by_id
+func/identities_by_email [schema-beeeon type/identity table/identities] 2017-07-11T11:59:15Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement identities_by_email

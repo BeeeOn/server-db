@@ -50,3 +50,4 @@ func/verified_identities_by_email [schema-beeeon type/verified_identity table/ve
 func/verified_identities_update [schema-beeeon table/verified_identities] 2017-07-11T14:31:52Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: imlement verified_identities_update
 func/verified_identities_remove [schema-beeeon table/verified_identities] 2017-07-14T16:30:59Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement verified_identities_remove
 func/roles_in_gateway_insert [schema-beeeon table/roles_in_gateway] 2017-07-11T14:40:48Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement roles_in_gateway_insert
+func/roles_in_gateway_update [schema-beeeon table/roles_in_gateway] 2017-07-11T15:48:55Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement roles_in_gateway_update

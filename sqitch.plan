@@ -3,3 +3,4 @@
 %uri=https://github.com/BeeeOn/server
 
 schema-beeeon 2017-07-09T17:23:34Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new scheme
+type/gateway_with_status [schema-beeeon] 2017-07-11T14:00:09Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type gateways_with_status

@@ -44,3 +44,4 @@ func/identities_by_id [schema-beeeon type/identity table/identities] 2017-07-10T
 func/identities_by_email [schema-beeeon type/identity table/identities] 2017-07-11T11:59:15Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement identities_by_email
 func/identities_remove [schema-beeeon table/identities] 2017-07-11T12:06:49Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement identities_remove
 func/verified_identities_insert [schema-beeeon table/verified_identities] 2017-07-11T12:23:28Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement verified_identities_insert
+func/verified_identities_by_id [schema-beeeon type/verified_identity table/verified_identities table/identities table/users] 2017-07-11T12:36:12Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement verified_identities_by_id

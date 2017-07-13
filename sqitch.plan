@@ -57,3 +57,4 @@ func/legacy_roles_in_gateway_by_gateway [schema-beeeon table/roles_in_gateway ta
 func/roles_in_gateway_remove [schema-beeeon table/roles_in_gateway] 2017-07-11T18:16:27Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement roles_in_gateway_remove
 func/roles_in_gateway_remove_user [schema-beeeon table/roles_in_gateway table/verified_identities] 2017-07-13T11:50:29Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement roles_in_gateway_remove_user
 func/roles_in_gateway_remove_gateway_all [schema-beeeon table/roles_in_gateway] 2017-07-13T11:59:18Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement roles_in_gateway_remove_gateway_all
+func/roles_in_gateway_is_user [schema-beeeon table/roles_in_gateway table/verified_identities table/users] 2017-07-13T12:01:48Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement roles_in_gateway_is_user

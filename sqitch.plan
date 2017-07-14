@@ -67,3 +67,4 @@ func/legacy_gateways_accessible [schema-beeeon type/legacy_gateway view/legacy_g
 func/devices_insert [schema-beeeon type/device table/devices] 2017-07-14T08:48:48Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement devices_insert
 func/devices_update [schema-beeeon type/device table/devices] 2017-07-14T11:08:19Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement devices_update
 func/devices_active_by_gateway [schema-beeeon type/device table/devices] 2017-07-14T11:33:34Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement devices_active_by_gateway
+func/devices_inactive_by_gateway [schema-beeeon type/device table/devices] 2017-07-14T11:40:45Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement devices_inactive_by_gateway

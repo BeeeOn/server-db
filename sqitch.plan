@@ -48,3 +48,4 @@ func/verified_identities_by_id [schema-beeeon type/verified_identity table/verif
 func/verified_identities_by_email_and_provider [schema-beeeon type/verified_identity table/verified_identities table/identities table/users] 2017-07-11T12:41:05Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement verified_identities_by_email_and_provider
 func/verified_identities_by_email [schema-beeeon type/verified_identity table/verified_identities table/identities table/users] 2017-07-11T12:59:46Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement verified_identities_by_email
 func/verified_identities_update [schema-beeeon table/verified_identities] 2017-07-11T14:31:52Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: imlement verified_identities_update
+func/verified_identities_remove [schema-beeeon table/verified_identities] 2017-07-14T16:30:59Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement verified_identities_remove

@@ -5,3 +5,4 @@
 schema-beeeon 2017-07-09T17:23:34Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new scheme
 type/gateway_with_status [schema-beeeon] 2017-07-11T14:00:09Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type gateways_with_status
 type/legacy_gateway [schema-beeeon] 2017-07-13T13:36:45Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type legacy_gateway
+type/location [schema-beeeon] 2017-07-14T15:28:29Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type location

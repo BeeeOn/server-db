@@ -74,3 +74,4 @@ func/device_properties_insert [schema-beeeon type/device_property type/device ta
 func/device_properties_update [schema-beeeon type/device_property type/device table/device_properties] 2017-07-14T12:26:19Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement device_properties_update
 func/device_properties_by_key [schema-beeeon type/device_property type/device table/device_properties] 2017-07-14T12:30:11Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement device_properties_by_key
 func/device_properties_by_device [schema-beeeon type/device_property type/device table/device_properties] 2017-07-14T13:15:20Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement device_properties_by_device
+func/device_properties_remove [schema-beeeon type/device table/device_properties] 2017-07-14T15:20:34Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement device_properties_remove

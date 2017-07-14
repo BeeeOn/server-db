@@ -65,3 +65,4 @@ func/roles_in_gateway_access_level [table/roles_in_gateway table/verified_identi
 func/legacy_gateways_by_id [schema-beeeon type/legacy_gateway view/legacy_gateways view/users_of_gateway table/gateways_status table/users func/gateways_status_most_recent] 2017-07-13T13:43:27Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement legacy_gateways_by_id
 func/legacy_gateways_accessible [schema-beeeon type/legacy_gateway view/legacy_gateways view/users_of_gateway table/gateways_status table/users func/gateways_status_most_recent] 2017-07-14T08:21:55Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement legacy_gateways_accessible
 func/devices_insert [schema-beeeon type/device table/devices] 2017-07-14T08:48:48Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement devices_insert
+func/devices_update [schema-beeeon type/device table/devices] 2017-07-14T11:08:19Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement devices_update

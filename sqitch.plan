@@ -10,3 +10,4 @@ type/identity [schema-beeeon] 2017-07-14T13:40:13Z Jan Viktorin <iviktorin@fit.v
 type/verified_identity [schema-beeeon] 2017-07-11T13:33:40Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type verified_identity
 type/user [schema-beeeon] 2017-07-11T14:21:31Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type user
 type/device [schema-beeeon] 2017-07-11T14:23:06Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type device
+type/device_property [schema-beeeon] 2017-07-14T12:15:52Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type device_property

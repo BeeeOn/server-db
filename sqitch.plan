@@ -36,3 +36,4 @@ func/locations_by_id [schema-beeeon type/location table/locations] 2017-07-10T14
 func/locations_by_gateway [schema-beeeon type/location table/locations] 2017-07-10T14:26:52Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement locations_by_gateway
 func/locations_update [schema-beeeon table/locations] 2017-07-10T14:30:42Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement locations_update
 func/locations_remove [schema-beeeon table/locations] 2017-07-10T14:41:49Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement locations_remove
+func/locations_by_id_and_gateway [schema-beeeon type/location table/locations] 2017-07-17T10:57:42Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement locations_by_id_and_gateway

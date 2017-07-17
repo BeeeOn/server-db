@@ -69,3 +69,4 @@ func/devices_update [schema-beeeon type/device table/devices] 2017-07-14T11:08:1
 func/devices_active_by_gateway [schema-beeeon type/device table/devices] 2017-07-14T11:33:34Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement devices_active_by_gateway
 func/devices_inactive_by_gateway [schema-beeeon type/device table/devices] 2017-07-14T11:40:45Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement devices_inactive_by_gateway
 func/devices_active_by_idrange_and_gateway [schema-beeeon type/device table/devices] 2017-07-14T15:45:12Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement devices_active_by_idrange_and_gateway
+func/devices_by_id_and_gateway [schema-beeeon type/device table/devices] 2017-07-17T14:17:09Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement devices_by_id_and_gateway

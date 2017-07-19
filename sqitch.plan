@@ -76,3 +76,4 @@ func/device_properties_by_key [schema-beeeon type/device_property type/device ta
 func/device_properties_by_device [schema-beeeon type/device_property type/device table/device_properties] 2017-07-14T13:15:20Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement device_properties_by_device
 func/device_properties_remove [schema-beeeon type/device table/device_properties] 2017-07-14T15:20:34Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement device_properties_remove
 func/sensor_history_recent_insert [schema-beeeon type/device table/sensor_history_recent] 2017-07-19T13:43:08Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement sensor_history_recent_insert
+func/sensor_history_last_value [schema-beeeon type/device table/sensor_history_recent] 2017-07-19T16:15:37Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement sensor_history_last_value

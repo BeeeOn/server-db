@@ -4,8 +4,8 @@ BEGIN;
 
 CREATE OR REPLACE FUNCTION beeeon.devices_active_by_idrange_and_gateway(
 	_gateway_id bigint,
-	_min_id numeric,
-	_max_id numeric
+	_min_id numeric(20, 0),
+	_max_id numeric(20, 0)
 )
 RETURNS SETOF beeeon.device AS
 $$

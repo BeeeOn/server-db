@@ -79,3 +79,4 @@ func/sensor_history_recent_insert [schema-beeeon type/device table/sensor_histor
 func/sensor_history_last_value [schema-beeeon type/device table/sensor_history_recent] 2017-07-19T16:15:37Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement sensor_history_last_value
 func/sensor_history_recent_aggregate [schema-beeeon type/device table/sensor_history_recent] 2017-07-19T17:49:01Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement sensor_history_recent_aggregate
 func/roles_in_gateway_can_see_identity [schema-beeeon table/roles_in_gateway view/users_of_gateway] 2017-08-08T15:50:17Z jviki <jviki@pcviktorin> # beeeon: implement roles_in_gateway_can_see_identity
+func/roles_in_gateway_can_see_verified_identity [schema-beeeon table/roles_in_gateway table/verified_identities] 2017-08-11T12:56:22Z jviki <jviki@pcviktorin> # beeeon: implement roles_in_gateway_can_see_verified_identity

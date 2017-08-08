@@ -6,9 +6,10 @@ SET search_path TO beeeon, public;
 
 BEGIN;
 
-SELECT plan(5);
+SELECT plan(9);
 
 SELECT has_function('roles_in_gateway_can_see_identity');
+SELECT has_function('roles_in_gateway_can_see_verified_identity');
 
 SELECT ok(
 	NOT beeeon.roles_in_gateway_can_see_identity(
@@ -28,9 +29,21 @@ VALUES
 INSERT INTO users (id, first_name, last_name, locale)
 VALUES
 (
+	'42fd0ee5-d3b7-43ff-8c5c-34ca7610ee36',
+	'Somebody',
+	'Else',
+	''
+),
+(
 	'ee799206-8c44-4e00-b88b-4be3b8ede082',
 	'John',
 	'Smith',
+	''
+),
+(
+	'28eecf1e-d0e2-4c5f-a036-1387636295bd',
+	'Invisible',
+	'User',
 	''
 );
 
@@ -51,11 +64,25 @@ VALUES
 
 INSERT INTO verified_identities (id, identity_id, user_id, provider)
 VALUES
+-- Somebody Else
+(
+	'67f6e1db-ae72-4643-8094-8de2cb62efee',
+	'12f2c1b9-737a-4c30-885a-f98f2e8aaa55',
+	'42fd0ee5-d3b7-43ff-8c5c-34ca7610ee36',
+	'testing-provider'
+),
 -- John Smith
 (
 	'1b11114e-b216-4b97-8a0e-97b5ab6da659',
 	'c1eb4425-278d-479f-ac6c-ede1c38931e2',
 	'ee799206-8c44-4e00-b88b-4be3b8ede082',
+	'testing-provider'
+),
+-- Invisible User
+(
+	'5c6ba33f-218e-4c85-b613-d7a906d7b2fe',
+	'e6f59816-beac-4dcd-9c27-7d2d49b5f0ca',
+	'28eecf1e-d0e2-4c5f-a036-1387636295bd',
 	'testing-provider'
 );
 
@@ -97,6 +124,32 @@ SELECT ok(
 SELECT ok(
 	beeeon.roles_in_gateway_can_see_identity(
 		'c1eb4425-278d-479f-ac6c-ede1c38931e2',
+		'ee799206-8c44-4e00-b88b-4be3b8ede082'
+	),
+	'user ee799206-8c44-4e00-b88b-4be3b8ede082 must see herself'
+);
+
+--------------------------
+
+SELECT ok(
+	beeeon.roles_in_gateway_can_see_verified_identity(
+		'67f6e1db-ae72-4643-8094-8de2cb62efee',
+		'ee799206-8c44-4e00-b88b-4be3b8ede082'
+	),
+	'user ee799206-8c44-4e00-b88b-4be3b8ede082 must see verified identity 67f6e1db-ae72-4643-8094-8de2cb62efee'
+);
+
+SELECT ok(
+	NOT beeeon.roles_in_gateway_can_see_verified_identity(
+		'5c6ba33f-218e-4c85-b613-d7a906d7b2fe',
+		'ee799206-8c44-4e00-b88b-4be3b8ede082'
+	),
+	'user ee799206-8c44-4e00-b88b-4be3b8ede082 must not see identity 5c6ba33f-218e-4c85-b613-d7a906d7b2fe'
+);
+
+SELECT ok(
+	beeeon.roles_in_gateway_can_see_verified_identity(
+		'1b11114e-b216-4b97-8a0e-97b5ab6da659',
 		'ee799206-8c44-4e00-b88b-4be3b8ede082'
 	),
 	'user ee799206-8c44-4e00-b88b-4be3b8ede082 must see herself'

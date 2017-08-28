@@ -85,3 +85,4 @@ func/legacy_roles_in_gateway_by_id [schema-beeeon table/roles_in_gateway table/i
 table/fcm_tokens [schema-beeeon table/users] 2017-08-28T13:39:38Z Peter Kubov <xkubov06@stud.fit.vutbr.cz> # beeeon: new table fcm_tokens
 func/fcm_tokens_insert [schema-beeeon table/fcm_tokens] 2017-08-28T16:45:42Z Peter Kubov <xkubov06@stud.fit.vutbr.cz> # beeeon: implements fcm_tokens_insert
 func/fcm_tokens_remove [schema-beeeon table/fcm_tokens] 2017-08-28T17:04:42Z Peter Kubov <xkubov06@stud.fit.vutbr.cz> # beeeon: implements fcm_tokens_remove
+func/fcm_tokens_replace [schema-beeeon table/fcm_tokens] 2017-08-28T17:12:42Z Peter Kubov <xkubov06@stud.fit.vutbr.cz> # beeeon: implements fcm_tokens_replace

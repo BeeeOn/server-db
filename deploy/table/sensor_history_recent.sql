@@ -6,7 +6,7 @@ SET client_min_messages = 'warning';
 
 ---
 -- Data in this table should live only for a limited amount of time.
--- After a while, it should be moved intothe sensor_history_packed
+-- After a while, it should be moved into the sensor_history_packed
 -- table to save space and to have faster access to precomputed
 -- aggregated values.
 ---

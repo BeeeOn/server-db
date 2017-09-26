@@ -18,7 +18,7 @@ BEGIN
 			params
 		FROM beeeon.device_properties
 		WHERE
-			device_id = _device_id
+			device_id = beeeon.to_device_id(_device_id)
 			AND
 			gateway_id = _gateway_id;
 END;

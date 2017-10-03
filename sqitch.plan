@@ -87,3 +87,7 @@ func/fcm_tokens_insert [schema-beeeon table/fcm_tokens] 2017-08-28T16:45:42Z Pet
 func/fcm_tokens_remove [schema-beeeon table/fcm_tokens] 2017-08-28T17:04:42Z Peter Kubov <xkubov06@stud.fit.vutbr.cz> # beeeon: implements fcm_tokens_remove
 func/fcm_tokens_replace [schema-beeeon table/fcm_tokens] 2017-08-28T17:12:42Z Peter Kubov <xkubov06@stud.fit.vutbr.cz> # beeeon: implements fcm_tokens_replace
 func/fcm_tokens_by_user_id [schema-beeeon table/fcm_tokens] 2017-08-28T17:24:42Z Peter Kubov <xkubov06@stud.fit.vutbr.cz> # beeeon: implements fcm_tokens_by_user_id
+type/control_stability [schema-beeeon] 2017-09-26T09:17:44Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type control_stability
+type/control_recent [schema-beeeon] 2017-09-26T14:43:19Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type control_recent
+table/controls_recent [schema-beeeon type/control_stability table/gateways table/devices] 2017-10-03T13:59:59Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table controls_recent
+func/controls_recent_state [schema-beeeon type/control_stability table/controls_recent] 2017-09-26T14:39:25Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement controls_recent_state

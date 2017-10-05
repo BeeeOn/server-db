@@ -78,7 +78,8 @@ if __name__ == "__main__":
 
 	logging.debug("waiting for kill %u" % os.getpid())
 	# print out pid to let other scripts to kill us if needed
-	print(os.getpid(), flush = True)
+	print(os.getpid())
+	sys.stdout.flush()
 
 	try:
 		event.wait()

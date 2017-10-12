@@ -2,7 +2,7 @@
 
 BEGIN;
 
-SELECT pg_catalog.has_schema_privilege('beeeon', 'usage');
+SELECT has_schema_privilege('beeeon', 'usage');
 
 SELECT has_function_privilege(
 	'beeeon.always_fail(text)',

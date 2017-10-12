@@ -13,4 +13,8 @@ CREATE TABLE beeeon.gateways (
 	CONSTRAINT gateways_pk PRIMARY KEY (id)
 );
 
+GRANT SELECT, INSERT, UPDATE, DELETE
+	ON TABLE beeeon.gateways
+	TO beeeon_user;
+
 COMMIT;

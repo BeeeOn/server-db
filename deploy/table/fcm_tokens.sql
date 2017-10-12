@@ -11,4 +11,8 @@ CREATE TABLE beeeon.fcm_tokens (
 	CONSTRAINT fcm_tokens_fk FOREIGN KEY (user_id) REFERENCES beeeon.users (id)
 );
 
+GRANT SELECT, INSERT, UPDATE, DELETE
+	ON TABLE beeeon.fcm_tokens
+	TO beeeon_user;
+
 COMMIT;

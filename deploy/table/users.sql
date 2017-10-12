@@ -12,4 +12,8 @@ CREATE TABLE beeeon.users (
 	CONSTRAINT users_pk PRIMARY KEY (id)
 );
 
+GRANT SELECT, INSERT, UPDATE, DELETE
+	ON TABLE beeeon.users
+	TO beeeon_user;
+
 COMMIT;

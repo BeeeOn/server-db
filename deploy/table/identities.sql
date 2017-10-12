@@ -12,4 +12,8 @@ CREATE TABLE beeeon.identities (
 	CONSTRAINT check_email_valid CHECK (email ~ '^[^@]+@[^@]+$')
 );
 
+GRANT SELECT, INSERT, UPDATE, DELETE
+	ON TABLE beeeon.identities
+	TO beeeon_user;
+
 COMMIT;

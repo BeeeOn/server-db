@@ -22,4 +22,8 @@ CREATE TABLE beeeon.controls_recent (
 		REFERENCES beeeon.devices (gateway_id, id)
 );
 
+GRANT SELECT, INSERT, UPDATE, DELETE
+	ON TABLE beeeon.controls_recent
+	TO beeeon_user;
+
 COMMIT;

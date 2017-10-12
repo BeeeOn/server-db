@@ -17,4 +17,8 @@ CREATE TABLE beeeon.verified_identities (
 	CONSTRAINT unique_verified_identity UNIQUE (identity_id, provider)
 );
 
+GRANT SELECT, INSERT, UPDATE, DELETE
+	ON TABLE beeeon.verified_identities
+	TO beeeon_user;
+
 COMMIT;

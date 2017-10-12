@@ -12,6 +12,16 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+CREATE OR REPLACE FUNCTION beeeon.assure_true(result bool, reason text)
+RETURNS VOID AS
+$$
+BEGIN
+	IF NOT result THEN
+		RAISE EXCEPTION '%', reason;
+	END IF;
+END;
+$$ LANGUAGE plpgsql;
+
 -- helper for verify scripts
 CREATE OR REPLACE FUNCTION beeeon.assure_function(
 	ns text,

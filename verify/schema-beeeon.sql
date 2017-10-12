@@ -10,6 +10,11 @@ SELECT has_function_privilege(
 );
 
 SELECT has_function_privilege(
+	'beeeon.assure_true(bool, text)',
+	'execute'
+);
+
+SELECT has_function_privilege(
 	'beeeon.assure_function(text, text)',
 	'execute'
 );

@@ -22,6 +22,26 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+CREATE OR REPLACE FUNCTION beeeon.assure_table_priviledges(
+	_user text,
+	_table text,
+	_priv text[]
+) RETURNS VOID AS
+$$
+DECLARE
+	p text;
+BEGIN
+	FOREACH p IN ARRAY _priv LOOP
+		IF has_table_privilege(_user, _table, p) THEN
+			CONTINUE;
+		END IF;
+
+		RAISE EXCEPTION '%',
+			_user || ' should have ' || p || ' privilege to ' || _table;
+	END LOOP;
+END;
+$$ LANGUAGE plpgsql;
+
 -- helper for verify scripts
 CREATE OR REPLACE FUNCTION beeeon.assure_function(
 	ns text,

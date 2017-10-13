@@ -25,4 +25,8 @@ CREATE TABLE beeeon.devices (
 	CONSTRAINT check_signal_valid CHECK (signal IS NULL OR (signal >= 0 AND signal <= 100))
 );
 
+GRANT SELECT, INSERT, UPDATE, DELETE
+	ON TABLE beeeon.devices
+	TO beeeon_user;
+
 COMMIT;

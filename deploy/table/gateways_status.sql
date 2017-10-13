@@ -13,4 +13,8 @@ CREATE TABLE beeeon.gateways_status (
 	CONSTRAINT gateways_status_gateways_fk FOREIGN KEY (gateway_id) REFERENCES beeeon.gateways (id)
 );
 
+GRANT SELECT, INSERT, UPDATE, DELETE
+	ON TABLE beeeon.gateways_status
+	TO beeeon_user;
+
 COMMIT;

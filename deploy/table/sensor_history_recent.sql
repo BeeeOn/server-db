@@ -24,4 +24,8 @@ CREATE TABLE beeeon.sensor_history_recent (
 		REFERENCES beeeon.devices (gateway_id, id)
 );
 
+GRANT SELECT, INSERT, UPDATE, DELETE
+	ON TABLE beeeon.sensor_history_recent
+	TO beeeon_user;
+
 COMMIT;

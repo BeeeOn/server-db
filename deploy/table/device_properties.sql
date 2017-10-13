@@ -15,4 +15,8 @@ CREATE TABLE beeeon.device_properties (
 	CONSTRAINT device_properties_gateways_fk FOREIGN KEY (gateway_id) REFERENCES beeeon.gateways (id)
 );
 
+GRANT SELECT, INSERT, UPDATE, DELETE
+	ON TABLE beeeon.device_properties
+	TO beeeon_user;
+
 COMMIT;

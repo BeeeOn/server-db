@@ -8,4 +8,9 @@ SELECT
 FROM beeeon.fcm_tokens
 WHERE FALSE;
 
+SELECT beeeon.assure_table_priviledges(
+	'beeeon_user', 'beeeon.fcm_tokens',
+	ARRAY['select', 'insert', 'update', 'delete']
+);
+
 ROLLBACK;

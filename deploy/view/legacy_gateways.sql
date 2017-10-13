@@ -22,4 +22,8 @@ SELECT
 	AS owner_id
 	FROM beeeon.gateways AS g;
 
+GRANT SELECT
+	ON TABLE beeeon.legacy_gateways
+	TO beeeon_user;
+
 COMMIT;

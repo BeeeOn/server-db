@@ -12,4 +12,9 @@ SELECT
 FROM beeeon.verified_identities
 WHERE FALSE;
 
+SELECT beeeon.assure_table_priviledges(
+	'beeeon_user', 'beeeon.verified_identities',
+	ARRAY['select', 'insert', 'update', 'delete']
+);
+
 ROLLBACK;

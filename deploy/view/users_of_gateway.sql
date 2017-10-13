@@ -24,4 +24,8 @@ CREATE VIEW beeeon.users_of_gateway AS
 			WHERE subv.user_id = v.user_id
 		);
 
+GRANT SELECT
+	ON TABLE beeeon.users_of_gateway
+	TO beeeon_user;
+
 COMMIT;

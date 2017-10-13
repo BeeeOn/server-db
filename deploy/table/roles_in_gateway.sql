@@ -18,5 +18,8 @@ CREATE TABLE beeeon.roles_in_gateway (
 	CONSTRAINT gateway_with_created UNIQUE (gateway_id, created)
 );
 
+GRANT SELECT, INSERT, UPDATE, DELETE
+	ON TABLE beeeon.roles_in_gateway
+	TO beeeon_user;
 
 COMMIT;

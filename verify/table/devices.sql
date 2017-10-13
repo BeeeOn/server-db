@@ -17,4 +17,9 @@ SELECT
 FROM beeeon.devices
 WHERE FALSE;
 
+SELECT beeeon.assure_table_priviledges(
+	'beeeon_user', 'beeeon.devices',
+	ARRAY['select', 'insert', 'update', 'delete']
+);
+
 ROLLBACK;

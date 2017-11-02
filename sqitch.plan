@@ -92,3 +92,4 @@ type/control_recent [schema-beeeon] 2017-09-26T14:43:19Z Jan Viktorin <iviktorin
 table/controls_recent [schema-beeeon type/control_stability table/gateways table/devices] 2017-10-03T13:59:59Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table controls_recent
 func/controls_recent_state [schema-beeeon type/control_stability table/controls_recent] 2017-09-26T14:39:25Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement controls_recent_state
 type/fcm_token [schema-beeeon] 2017-09-26T14:39:25Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type fcm_token
+func/fcm_tokens_by_id [schema-beeeon type/fcm_token table/users table/fcm_tokens] 2017-09-01T16:22:42Z Peter Kubov <xkubov06@stud.fit.vutbr.cz> # beeeon: implements fcm_tokens_by_id

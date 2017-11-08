@@ -2,7 +2,7 @@
 
 BEGIN;
 
-SELECT id, name, altitude, latitude, longitude
+SELECT id, name, altitude, latitude, longitude, timezone
 	FROM beeeon.gateways WHERE FALSE;
 
 SELECT beeeon.assure_table_priviledges(

@@ -6,7 +6,7 @@ SET search_path TO beeeon, public;
 
 BEGIN;
 
-SELECT plan(17);
+SELECT plan(19);
 
 SELECT has_view('legacy_gateways');
 
@@ -24,6 +24,9 @@ SELECT col_type_is('legacy_gateways', 'latitude', 'double precision');
 
 SELECT has_column('legacy_gateways', 'longitude');
 SELECT col_type_is('legacy_gateways', 'longitude', 'double precision');
+
+SELECT has_column('legacy_gateways', 'timezone');
+SELECT col_type_is('legacy_gateways', 'timezone', 'character varying(64)');
 
 SELECT has_column('legacy_gateways', 'roles_count');
 SELECT col_type_is('legacy_gateways', 'roles_count', 'bigint');

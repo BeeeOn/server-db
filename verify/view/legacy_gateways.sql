@@ -8,6 +8,7 @@ SELECT
 	altitude,
 	latitude,
 	longitude,
+	timezone,
 	roles_count,
 	devices_count,
 	owner_id

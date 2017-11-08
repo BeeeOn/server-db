@@ -15,6 +15,7 @@ BEGIN
 			g.altitude,
 			g.latitude,
 			g.longitude,
+			g.timezone,
 			extract(epoch from s.at)::bigint,
 			s.version,
 			host(s.ip)::varchar(45)

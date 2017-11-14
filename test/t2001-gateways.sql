@@ -6,7 +6,7 @@ SET search_path TO beeeon, public;
 
 BEGIN;
 
-SELECT plan(17);
+SELECT plan(20);
 
 SELECT has_table('gateways');
 SELECT has_pk('gateways');
@@ -30,6 +30,10 @@ SELECT col_is_null('gateways', 'latitude');
 SELECT has_column('gateways', 'longitude');
 SELECT col_type_is('gateways', 'longitude', 'double precision');
 SELECT col_is_null('gateways', 'longitude');
+
+SELECT has_column('gateways', 'timezone');
+SELECT col_type_is('gateways', 'timezone', 'character varying(64)');
+SELECT col_not_null('gateways', 'timezone');
 
 SELECT finish();
 ROLLBACK;

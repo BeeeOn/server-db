@@ -9,6 +9,7 @@ SELECT
 	g.altitude AS altitude,
 	g.latitude AS latitude,
 	g.longitude AS longitude,
+	g.timezone AS timezone,
 	(SELECT COUNT(*) FROM beeeon.roles_in_gateway AS r
 		WHERE r.gateway_id = g.id)
 	AS roles_count,

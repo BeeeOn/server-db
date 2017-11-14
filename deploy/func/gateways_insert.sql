@@ -7,7 +7,8 @@ CREATE OR REPLACE FUNCTION beeeon.gateways_insert (
 	_name varchar(250),
 	_altitude integer,
 	_latitude double precision,
-	_longitude double precision
+	_longitude double precision,
+	_timezone varchar(64)
 )
 RETURNS VOID AS
 $$
@@ -16,9 +17,10 @@ $$
 		name,
 		altitude,
 		latitude,
-		longitude
+		longitude,
+		timezone
 	)
-	VALUES (_id, _name, _altitude, _latitude, _longitude);
+	VALUES (_id, _name, _altitude, _latitude, _longitude, _timezone);
 $$ LANGUAGE SQL;
 
 COMMIT;

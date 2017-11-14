@@ -10,6 +10,7 @@ CREATE TABLE beeeon.gateways (
 	altitude integer,
 	latitude double precision,
 	longitude double precision,
+	timezone varchar(64) NOT NULL DEFAULT 'GMT',
 	CONSTRAINT gateways_pk PRIMARY KEY (id)
 );
 

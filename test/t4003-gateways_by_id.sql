@@ -15,11 +15,11 @@ SELECT is_empty(
 	'there is nothing yet in the gateways table'
 );
 
-INSERT INTO beeeon.gateways (id, name, altitude, latitude, longitude)
+INSERT INTO beeeon.gateways (id, name, altitude, latitude, longitude, timezone)
 VALUES
-	(1115569803521760, 'first',  1, 1.5, -1.5),
-	(1942714939170667, 'second', 2, 2.5, -2.5),
-	(1149223136489871, 'third',  3, 3.5, -3.5);
+	(1115569803521760, 'first',  1, 1.5, -1.5, 'Europe/Paris'),
+	(1942714939170667, 'second', 2, 2.5, -2.5, 'Europe/Prague'),
+	(1149223136489871, 'third',  3, 3.5, -3.5, 'Europe/London');
 
 SELECT results_eq(
 	$$ SELECT * FROM gateways_by_id(1115569803521760) $$,
@@ -29,6 +29,7 @@ SELECT results_eq(
 		1,
 		1.5::double precision,
 		-1.5::double precision,
+		'Europe/Paris'::varchar(64),
 		NULL::bigint,
 		NULL::varchar(40),
 		NULL::varchar(45)
@@ -44,6 +45,7 @@ SELECT results_eq(
 		2,
 		2.5::double precision,
 		-2.5::double precision,
+		'Europe/Prague'::varchar(64),
 		NULL::bigint,
 		NULL::varchar(40),
 		NULL::varchar(45)
@@ -59,6 +61,7 @@ SELECT results_eq(
 		3,
 		3.5::double precision,
 		-3.5::double precision,
+		'Europe/London'::varchar(64),
 		NULL::bigint,
 		NULL::varchar(40),
 		NULL::varchar(45)
@@ -85,6 +88,7 @@ SELECT results_eq(
 		1,
 		1.5::double precision,
 		-1.5::double precision,
+		'Europe/Paris'::varchar(64),
 		extract(epoch FROM timestamp with time zone '2017-7-10 01:10:46')::bigint,
 		'next'::varchar(40),
 		'192.168.1.2'::varchar(45)

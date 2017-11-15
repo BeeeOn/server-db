@@ -49,17 +49,17 @@ SELECT col_has_check('devices', 'signal');
 SELECT col_is_null('devices', 'signal');
 
 SELECT has_column('devices', 'first_seen');
-SELECT col_type_is('devices', 'first_seen', 'timestamp with time zone');
+SELECT col_type_is('devices', 'first_seen', 'timestamp without time zone');
 SELECT col_not_null('devices', 'first_seen');
 
 SELECT has_column('devices', 'last_seen');
-SELECT col_type_is('devices', 'last_seen', 'timestamp with time zone');
+SELECT col_type_is('devices', 'last_seen', 'timestamp without time zone');
 SELECT col_not_null('devices', 'last_seen');
 
 SELECT col_has_check('devices', ARRAY['first_seen', 'last_seen']);
 
 SELECT has_column('devices', 'active_since');
-SELECT col_type_is('devices', 'active_since', 'timestamp with time zone');
+SELECT col_type_is('devices', 'active_since', 'timestamp without time zone');
 SELECT col_is_null('devices', 'active_since');
 
 SELECT finish();

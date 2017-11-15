@@ -16,7 +16,7 @@ SELECT throws_ok(
 		1589057876756829,
 		'18bc8fa5-7606-4964-b3e1-a3aa239b01d3',
 		10,
-		extract(epoch FROM timestamp with time zone '2017-7-11 14:41:34')::bigint
+		extract(epoch FROM timestamp '2017-7-11 14:41:34')::bigint
 	) $$,
 	23503,
 	NULL,
@@ -35,7 +35,7 @@ SELECT lives_ok(
 		1589057876756829,
 		'18bc8fa5-7606-4964-b3e1-a3aa239b01d3',
 		10,
-		extract(epoch FROM timestamp with time zone '2017-7-11 14:41:34')::bigint
+		extract(epoch FROM timestamp '2017-7-11 14:41:34')::bigint
 	) $$,
 	'insert has no reason to fail now'
 );
@@ -51,7 +51,7 @@ SELECT ok(EXISTS(
 		AND
 		level = 10
 		AND
-		created = timestamp with time zone '2017-7-11 14:41:34'
+		created = timestamp '2017-7-11 14:41:34'
 	),
 	'role 35a6c2ce-27a4-4d24-b787-3d6c8ac0877a should exist'
 );

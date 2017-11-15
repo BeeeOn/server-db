@@ -14,7 +14,7 @@ CREATE TABLE beeeon.sensor_history_recent (
 	gateway_id bigint NOT NULL,
 	device_id bigint NOT NULL,
 	module_id smallint NOT NULL,
-	at timestamp with time zone NOT NULL,
+	at timestamp NOT NULL,
 	value real,
 
 	CONSTRAINT sensor_history_recent_pk PRIMARY KEY (gateway_id, device_id, module_id, at),

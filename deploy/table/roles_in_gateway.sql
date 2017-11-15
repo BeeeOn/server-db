@@ -9,7 +9,7 @@ CREATE TABLE beeeon.roles_in_gateway (
 	gateway_id bigint NOT NULL,
 	identity_id uuid NOT NULL,
 	level smallint NOT NULL,
-	created timestamp with time zone NOT NULL,
+	created timestamp NOT NULL,
 	CONSTRAINT roles_in_gateway_pk PRIMARY KEY (id),
 	CONSTRAINT roles_in_gateway_gateways_fk FOREIGN KEY (gateway_id) REFERENCES beeeon.gateways (id),
 	CONSTRAINT roles_in_gateway_identities_fk FOREIGN KEY (identity_id) REFERENCES beeeon.identities (id),

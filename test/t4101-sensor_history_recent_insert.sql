@@ -15,7 +15,7 @@ SELECT throws_ok(
 		1240795450208837,
 		beeeon.to_device_id(11678152912333531136),
 		0::smallint,
-		to_timestamp(1500471778) at time zone 'UTC',
+		beeeon.as_utc_timestamp(1500471778),
 		0
 	) $$,
 	23503,

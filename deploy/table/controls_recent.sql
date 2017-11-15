@@ -9,7 +9,7 @@ CREATE TABLE beeeon.controls_recent (
 	device_id  bigint NOT NULL,
 	module_id  smallint NOT NULL,
 	value real,
-	at timestamp with time zone NOT NULL,
+	at timestamp NOT NULL,
 	stability beeeon.control_stability NOT NULL,
 	originator_user_id uuid,
 

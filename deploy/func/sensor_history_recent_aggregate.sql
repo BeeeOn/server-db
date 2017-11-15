@@ -21,8 +21,8 @@ DECLARE
 	_start_ts timestamp;
 	_end_ts timestamp;
 BEGIN
-	_start_ts = to_timestamp(_start);
-	_end_ts = to_timestamp(_end);
+	_start_ts = beeeon.as_utc_timestamp(_start);
+	_end_ts = beeeon.as_utc_timestamp(_end);
 
 	IF _interval <= 5 THEN
 		-- return all without aggregation (huh!)

@@ -19,7 +19,7 @@ SELECT col_type_is('gateways_status', 'gateway_id', 'bigint');
 SELECT col_is_fk('gateways_status', 'gateway_id');
 
 SELECT has_column('gateways_status', 'at');
-SELECT col_type_is('gateways_status', 'at', 'timestamp with time zone');
+SELECT col_type_is('gateways_status', 'at', 'timestamp without time zone');
 
 SELECT has_column('gateways_status', 'version');
 SELECT col_type_is('gateways_status', 'version', 'character varying(40)');

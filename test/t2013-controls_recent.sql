@@ -26,7 +26,7 @@ SELECT col_type_is('controls_recent', 'module_id', 'smallint');
 SELECT col_not_null('controls_recent', 'module_id');
 
 SELECT has_column('controls_recent', 'at');
-SELECT col_type_is('controls_recent', 'at', 'timestamp with time zone');
+SELECT col_type_is('controls_recent', 'at', 'timestamp without time zone');
 SELECT col_not_null('controls_recent', 'at');
 
 SELECT has_column('controls_recent', 'stability');

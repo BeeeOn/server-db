@@ -47,8 +47,8 @@ VALUES (
 	1240795450208837::bigint,
 	'testing device',
 	0,
-	timestamp with time zone '2017-7-20 10:01:01',
-	timestamp with time zone '2017-7-20 22:22:22'
+	timestamp '2017-7-20 10:01:01',
+	timestamp '2017-7-20 22:22:22'
 );
 
 SELECT ok(
@@ -61,7 +61,7 @@ SELECT ok(
 		50,
 		99::smallint,
 		50::smallint,
-		extract(epoch FROM timestamp with time zone '2017-7-20 23:23:23')::bigint
+		extract(epoch FROM timestamp '2017-7-20 23:23:23')::bigint
 	),
 	'update should work, device exists'
 );
@@ -73,7 +73,7 @@ SELECT results_eq(
 		refresh,
 		battery,
 		signal,
-		last_seen > timestamp with time zone '2017-7-20 22:22:22',
+		last_seen > timestamp '2017-7-20 22:22:22',
 		active_since
 	FROM devices
 	$$,
@@ -83,7 +83,7 @@ SELECT results_eq(
 		99::smallint,
 		50::smallint,
 		true,
-		timestamp with time zone '2017-7-20 23:23:23'
+		timestamp '2017-7-20 23:23:23'
 	) $$,
 	'update of name, refresh, battery, signal, active_since and last_seen should work'
 );

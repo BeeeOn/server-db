@@ -50,9 +50,9 @@ VALUES
 
 INSERT INTO roles_in_gateway (id, gateway_id, identity_id, level, created)
 VALUES
-	('0558ce78-a082-4f31-89f7-295526ab9d81', 1635070073611451, '0d4fcca8-4861-4f4f-8b30-1607ff798e69', 10, to_timestamp(1499662971) at time zone 'UTC'),
-	('602a177a-42eb-4076-802e-d5e5271c61ac', 1636174971032851, 'fa64cae2-5e88-4f02-812c-6f7b38410a38', 10, to_timestamp(1499681673) at time zone 'UTC'),
-	('f4cf520b-128a-43aa-a4a5-dd02b53c7701', 1559186554322495, 'c65551cf-acd8-46f6-8445-52788c969e8f', 10, to_timestamp(1499675520) at time zone 'UTC');
+	('0558ce78-a082-4f31-89f7-295526ab9d81', 1635070073611451, '0d4fcca8-4861-4f4f-8b30-1607ff798e69', 10, as_utc_timestamp(1499662971)),
+	('602a177a-42eb-4076-802e-d5e5271c61ac', 1636174971032851, 'fa64cae2-5e88-4f02-812c-6f7b38410a38', 10, as_utc_timestamp(1499681673)),
+	('f4cf520b-128a-43aa-a4a5-dd02b53c7701', 1559186554322495, 'c65551cf-acd8-46f6-8445-52788c969e8f', 10, as_utc_timestamp(1499675520));
 
 SELECT results_eq(
 	$$ SELECT id, name FROM gateways_accessible('33cafeac-8dc8-4306-a88d-0c04b75236a8') ORDER BY id $$,

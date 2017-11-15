@@ -17,7 +17,7 @@ SELECT is(COUNT(*)::integer, 0, 'there should be no status of 1151460236578635 y
 SELECT throws_ok(
 	$$ SELECT gateways_status_insert_or_skip(
 		1151460236578635,
-		extract(epoch FROM timestamp with time zone '2017-7-7 22:29:51')::bigint,
+		extract(epoch FROM timestamp '2017-7-7 22:29:51')::bigint,
 		'master',
 		'192.168.0.3'
 	) $$,
@@ -33,7 +33,7 @@ INSERT INTO gateways (id, name, altitude, latitude, longitude)
 SELECT lives_ok(
 	$$ SELECT gateways_status_insert_or_skip(
 		1151460236578635,
-		extract(epoch FROM timestamp with time zone '2017-7-7 22:29:51')::bigint,
+		extract(epoch FROM timestamp '2017-7-7 22:29:51')::bigint,
 		'master',
 		'192.168.0.3'
 	) $$,
@@ -45,7 +45,7 @@ SELECT ok(EXISTS(
 		WHERE
 			gateway_id = 1151460236578635
 			AND
-			at = timestamp with time zone '2017-7-7 22:29:51'
+			at = timestamp '2017-7-7 22:29:51'
 			AND
 			version = 'master'
 			AND
@@ -57,7 +57,7 @@ SELECT ok(EXISTS(
 SELECT lives_ok(
 	$$ SELECT gateways_status_insert_or_skip(
 		1151460236578635,
-		extract(epoch FROM timestamp with time zone '2017-7-8 01:16:31')::bigint,
+		extract(epoch FROM timestamp '2017-7-8 01:16:31')::bigint,
 		'master',
 		'192.168.0.3'
 	) $$,
@@ -81,14 +81,14 @@ SELECT lives_ok(
 
 SELECT results_eq(
 	$$ SELECT MAX(at) FROM gateways_status $$,
-	ARRAY [timestamp with time zone '2017-7-7 22:29:51'],
+	ARRAY [timestamp '2017-7-7 22:29:51'],
 	'the last insert should have been skipped (no real change)'
 );
 
 SELECT lives_ok(
 	$$ SELECT gateways_status_insert_or_skip(
 		1151460236578635,
-		extract(epoch FROM timestamp with time zone '2017-7-8 06:49:51')::bigint,
+		extract(epoch FROM timestamp '2017-7-8 06:49:51')::bigint,
 		'testing',
 		'192.168.0.3'
 	) $$,
@@ -100,7 +100,7 @@ SELECT ok(EXISTS(
 		WHERE
 			gateway_id = 1151460236578635
 			AND
-			at = timestamp with time zone '2017-7-8 06:49:51'
+			at = timestamp '2017-7-8 06:49:51'
 			AND
 			version = 'testing'
 			AND
@@ -112,7 +112,7 @@ SELECT ok(EXISTS(
 SELECT lives_ok(
 	$$ SELECT gateways_status_insert_or_skip(
 		1151460236578635,
-		extract(epoch FROM timestamp with time zone '2017-7-8 07:23:11')::bigint,
+		extract(epoch FROM timestamp '2017-7-8 07:23:11')::bigint,
 		'testing',
 		'192.168.0.4'
 	) $$,
@@ -124,7 +124,7 @@ SELECT ok(EXISTS(
 		WHERE
 			gateway_id = 1151460236578635
 			AND
-			at = timestamp with time zone '2017-7-8 07:23:11'
+			at = timestamp '2017-7-8 07:23:11'
 			AND
 			version = 'testing'
 			AND
@@ -136,7 +136,7 @@ SELECT ok(EXISTS(
 SELECT lives_ok(
 	$$ SELECT gateways_status_insert_or_skip(
 		1151460236578635,
-		extract(epoch from timestamp with time zone '2017-10-30 05:53:11')::bigint,
+		extract(epoch from timestamp '2017-10-30 05:53:11')::bigint,
 		'master',
 		'192.168.1.4'
 	) $$,
@@ -148,7 +148,7 @@ SELECT ok(EXISTS(
 		WHERE
 			gateway_id = 1151460236578635
 			AND
-			at = timestamp with time zone '2017-10-30 05:53:11'
+			at = timestamp '2017-10-30 05:53:11'
 			AND
 			version = 'master'
 			AND

@@ -17,7 +17,7 @@ SELECT has_column('users_of_gateway', 'role_id');
 SELECT col_type_is('users_of_gateway', 'role_id', 'uuid');
 
 SELECT has_column('users_of_gateway', 'created');
-SELECT col_type_is('users_of_gateway', 'created', 'timestamp with time zone');
+SELECT col_type_is('users_of_gateway', 'created', 'timestamp without time zone');
 
 SELECT has_column('users_of_gateway', 'level');
 SELECT col_type_is('users_of_gateway', 'level', 'smallint');

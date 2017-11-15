@@ -31,7 +31,7 @@ SELECT col_type_is('roles_in_gateway', 'level', 'smallint');
 SELECT col_has_check('roles_in_gateway', 'level');
 
 SELECT has_column('roles_in_gateway', 'created');
-SELECT col_type_is('roles_in_gateway', 'created', 'timestamp with time zone');
+SELECT col_type_is('roles_in_gateway', 'created', 'timestamp without time zone');
 
 SELECT finish();
 ROLLBACK;

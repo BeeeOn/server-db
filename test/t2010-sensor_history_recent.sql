@@ -28,7 +28,7 @@ SELECT col_type_is('sensor_history_recent', 'module_id', 'smallint');
 SELECT col_not_null('sensor_history_recent', 'module_id');
 
 SELECT has_column('sensor_history_recent', 'at');
-SELECT col_type_is('sensor_history_recent', 'at', 'timestamp with time zone');
+SELECT col_type_is('sensor_history_recent', 'at', 'timestamp without time zone');
 SELECT col_not_null('sensor_history_recent', 'at');
 
 SELECT col_is_pk('sensor_history_recent', ARRAY['gateway_id', 'device_id', 'module_id', 'at']);

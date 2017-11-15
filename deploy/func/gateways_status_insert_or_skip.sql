@@ -28,7 +28,7 @@ BEGIN
 		INSERT INTO beeeon.gateways_status (gateway_id, at, version, ip)
 		VALUES (
 			_gateway_id,
-			to_timestamp(_at),
+			beeeon.as_utc_timestamp(_at),
 			_version,
 			_ip::inet
 		);

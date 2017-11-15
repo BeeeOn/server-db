@@ -31,6 +31,11 @@ SELECT has_function_privilege(
 	'execute'
 );
 
+SELECT has_function_privilege(
+	'beeeon.as_utc_timestamp(bigint)',
+	'execute'
+);
+
 SELECT beeeon.assure_true(
 	has_schema_privilege('beeeon_user', 'beeeon', 'usage'),
 	'beeeon_user should have access to schema beeeon'

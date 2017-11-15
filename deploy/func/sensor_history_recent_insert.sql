@@ -6,7 +6,7 @@ CREATE OR REPLACE FUNCTION beeeon.sensor_history_recent_insert(
 	_gateway_id bigint,
 	_device_id bigint,
 	_module_id smallint,
-	_at timestamp with time zone,
+	_at timestamp,
 	_value real
 )
 RETURNS VOID AS

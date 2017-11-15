@@ -71,12 +71,12 @@ SELECT results_eq(
 
 INSERT INTO gateways_status (gateway_id, at, version, ip)
 VALUES
-	(1115569803521760, timestamp with time zone '2017-7-9 22:57:12', 'master', '192.168.1.1'::inet),
-	(1115569803521760, timestamp with time zone '2017-7-9 23:14:06', 'master', '192.168.1.2'::inet),
-	(1149223136489871, timestamp with time zone '2017-7-10 18:08:43', 'other', '10.0.10.1'::inet),
-	(1115569803521760, timestamp with time zone '2017-7-10 01:10:46', 'next', '192.168.1.2'::inet);
+	(1115569803521760, timestamp '2017-7-9 22:57:12', 'master', '192.168.1.1'::inet),
+	(1115569803521760, timestamp '2017-7-9 23:14:06', 'master', '192.168.1.2'::inet),
+	(1149223136489871, timestamp '2017-7-10 18:08:43', 'other', '10.0.10.1'::inet),
+	(1115569803521760, timestamp '2017-7-10 01:10:46', 'next', '192.168.1.2'::inet);
 
-SELECT is(MAX(at), timestamp with time zone '2017-7-10 01:10:46')
+SELECT is(MAX(at), timestamp '2017-7-10 01:10:46')
 	FROM gateways_status
 	WHERE gateway_id = 1115569803521760;
 
@@ -89,7 +89,7 @@ SELECT results_eq(
 		1.5::double precision,
 		-1.5::double precision,
 		'Europe/Paris'::varchar(64),
-		extract(epoch FROM timestamp with time zone '2017-7-10 01:10:46')::bigint,
+		extract(epoch FROM timestamp '2017-7-10 01:10:46')::bigint,
 		'next'::varchar(40),
 		'192.168.1.2'::varchar(45)
 	) $$,

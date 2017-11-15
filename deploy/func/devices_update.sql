@@ -26,7 +26,7 @@ BEGIN
 		battery = _battery,
 		signal = _signal,
 		last_seen = NOW(),
-		active_since = to_timestamp(_active_since)
+		active_since = beeeon.as_utc_timestamp(_active_since)
 	WHERE
 		id = beeeon.to_device_id(_id)
 		AND

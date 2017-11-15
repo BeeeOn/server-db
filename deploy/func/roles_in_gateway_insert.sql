@@ -23,7 +23,7 @@ $$
 		_gateway_id,
 		_identity_id,
 		_level,
-		to_timestamp(_created)
+		beeeon.as_utc_timestamp(_created)
 	);
 $$ LANGUAGE SQL;
 

@@ -5,10 +5,10 @@ BEGIN;
 CREATE OR REPLACE FUNCTION beeeon.gateways_status_most_recent(
 	_gateway_id bigint
 )
-RETURNS timestamp with time zone AS
+RETURNS timestamp AS
 $$
 DECLARE
-	last_at timestamp with time zone;
+	last_at timestamp;
 BEGIN
 	IF NOT EXISTS (
 		SELECT 1 FROM beeeon.gateways_status WHERE gateway_id = _gateway_id

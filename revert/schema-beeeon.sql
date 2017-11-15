@@ -2,6 +2,7 @@
 
 BEGIN;
 
+DROP FUNCTION beeeon.as_utc_timestamp(bigint);
 DROP FUNCTION beeeon.assure_type(text, text);
 DROP FUNCTION beeeon.assure_function(text, text);
 DROP FUNCTION beeeon.assure_table_priviledges(text, text, text[]);

@@ -20,8 +20,8 @@ SELECT throws_ok(
 		30,
 		100::smallint,
 		100::smallint,
-		extract(epoch from timestamp with time zone '2017-7-14 08:55:16')::bigint,
-		extract(epoch from timestamp with time zone '2017-7-14 08:55:16')::bigint,
+		extract(epoch from timestamp '2017-7-14 08:55:16')::bigint,
+		extract(epoch from timestamp '2017-7-14 08:55:16')::bigint,
 		NULL::bigint
 	) $$,
 	23503,
@@ -42,8 +42,8 @@ SELECT throws_ok(
 		30,
 		100::smallint,
 		100::smallint,
-		extract(epoch from timestamp with time zone '2017-7-14 08:55:16')::bigint,
-		extract(epoch from timestamp with time zone '2017-7-14 08:55:16')::bigint,
+		extract(epoch from timestamp '2017-7-14 08:55:16')::bigint,
+		extract(epoch from timestamp '2017-7-14 08:55:16')::bigint,
 		NULL::bigint
 	) $$,
 	23503,
@@ -64,8 +64,8 @@ SELECT lives_ok(
 		30,
 		100::smallint,
 		100::smallint,
-		extract(epoch from timestamp with time zone '2017-7-14 08:55:16')::bigint,
-		extract(epoch from timestamp with time zone '2017-7-14 08:55:16')::bigint,
+		extract(epoch from timestamp '2017-7-14 08:55:16')::bigint,
+		extract(epoch from timestamp '2017-7-14 08:55:16')::bigint,
 		NULL::bigint
 	) $$,
 	'no constraints should fail'

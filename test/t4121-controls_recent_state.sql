@@ -30,8 +30,8 @@ VALUES
 	1240795450208837,
 	'testing device',
 	0,
-	timestamp with time zone '2017-10-1 8:00:00',
-	timestamp with time zone '2017-10-4 9:00:00'
+	timestamp '2017-10-1 8:00:00',
+	timestamp '2017-10-4 9:00:00'
 );
 
 INSERT INTO controls_recent (gateway_id, device_id, module_id, value, at, stability, originator_user_id)
@@ -41,7 +41,7 @@ VALUES
 	to_device_id(11678152912333531136::numeric(20, 0)),
 	0,
 	5::real,
-	timestamp with time zone '2017-10-2 15:00:00',
+	timestamp '2017-10-2 15:00:00',
 	'requested',
 	'2bcf60a9-cd37-4f27-a7ab-3e6b740770ed'
 ),
@@ -50,7 +50,7 @@ VALUES
 	to_device_id(11678152912333531136::numeric(20, 0)),
 	0,
 	5::real,
-	timestamp with time zone '2017-10-2 15:01:04',
+	timestamp '2017-10-2 15:01:04',
 	'accepted',
 	NULL
 );
@@ -62,11 +62,11 @@ VALUES
 ---
 SELECT results_eq(
 	$$ SELECT
-		to_timestamp(confirmed_state_at),
+		as_utc_timestamp(confirmed_state_at),
 		confirmed_state_value,
 		confirmed_state_stability,
 		confirmed_state_originator_user_id,
-		to_timestamp(current_state_at),
+		as_utc_timestamp(current_state_at),
 		current_state_value,
 		current_state_stability,
 		current_state_originator_user_id
@@ -76,11 +76,11 @@ SELECT results_eq(
 		0::smallint
 	) $$,
 	$$ VALUES (
-		NULL::timestamp with time zone,
+		NULL::timestamp,
 		NULL::real,
 		NULL::smallint,
 		NULL::uuid,
-		timestamp with time zone '2017-10-2 15:01:04',
+		timestamp '2017-10-2 15:01:04',
 		5::real,
 		from_control_stability('accepted'),
 		NULL::uuid
@@ -95,7 +95,7 @@ VALUES
 	to_device_id(11678152912333531136::numeric(20, 0)),
 	0,
 	5::real,
-	timestamp with time zone '2017-10-2 15:01:46',
+	timestamp '2017-10-2 15:01:46',
 	'confirmed',
 	NULL
 );
@@ -105,11 +105,11 @@ VALUES
 ---
 SELECT results_eq(
 	$$ SELECT
-		to_timestamp(confirmed_state_at),
+		as_utc_timestamp(confirmed_state_at),
 		confirmed_state_value,
 		confirmed_state_stability,
 		confirmed_state_originator_user_id,
-		to_timestamp(current_state_at),
+		as_utc_timestamp(current_state_at),
 		current_state_value,
 		current_state_stability,
 		current_state_originator_user_id
@@ -119,11 +119,11 @@ SELECT results_eq(
 		0::smallint
 	) $$,
 	$$ VALUES (
-		timestamp with time zone '2017-10-2 15:01:46',
+		timestamp '2017-10-2 15:01:46',
 		5::real,
 		from_control_stability('confirmed'),
 		NULL::uuid,
-		timestamp with time zone '2017-10-2 15:01:46',
+		timestamp '2017-10-2 15:01:46',
 		5::real,
 		from_control_stability('confirmed'),
 		NULL::uuid
@@ -138,7 +138,7 @@ VALUES
 	to_device_id(11678152912333531136::numeric(20, 0)),
 	0,
 	15::real,
-	timestamp with time zone '2017-10-2 15:05:11',
+	timestamp '2017-10-2 15:05:11',
 	'requested',
 	'2bcf60a9-cd37-4f27-a7ab-3e6b740770ed'
 );
@@ -149,11 +149,11 @@ VALUES
 ---
 SELECT results_eq(
 	$$ SELECT
-		to_timestamp(confirmed_state_at),
+		as_utc_timestamp(confirmed_state_at),
 		confirmed_state_value,
 		confirmed_state_stability,
 		confirmed_state_originator_user_id,
-		to_timestamp(current_state_at),
+		as_utc_timestamp(current_state_at),
 		current_state_value,
 		current_state_stability,
 		current_state_originator_user_id
@@ -163,11 +163,11 @@ SELECT results_eq(
 		0::smallint
 	) $$,
 	$$ VALUES (
-		timestamp with time zone '2017-10-2 15:01:46',
+		timestamp '2017-10-2 15:01:46',
 		5::real,
 		from_control_stability('confirmed'),
 		NULL::uuid,
-		timestamp with time zone '2017-10-2 15:05:11',
+		timestamp '2017-10-2 15:05:11',
 		15::real,
 		from_control_stability('requested'),
 		'2bcf60a9-cd37-4f27-a7ab-3e6b740770ed'::uuid
@@ -182,7 +182,7 @@ VALUES
 	to_device_id(11678152912333531136::numeric(20, 0)),
 	0,
 	8::real,
-	timestamp with time zone '2017-10-2 15:05:11',
+	timestamp '2017-10-2 15:05:11',
 	'overriden',
 	NULL
 );
@@ -195,11 +195,11 @@ VALUES
 ---
 SELECT results_eq(
 	$$ SELECT
-		to_timestamp(confirmed_state_at),
+		as_utc_timestamp(confirmed_state_at),
 		confirmed_state_value,
 		confirmed_state_stability,
 		confirmed_state_originator_user_id,
-		to_timestamp(current_state_at),
+		as_utc_timestamp(current_state_at),
 		current_state_value,
 		current_state_stability,
 		current_state_originator_user_id
@@ -209,11 +209,11 @@ SELECT results_eq(
 		0::smallint
 	) $$,
 	$$ VALUES (
-		timestamp with time zone '2017-10-2 15:05:11',
+		timestamp '2017-10-2 15:05:11',
 		8::real,
 		from_control_stability('overriden'),
 		NULL::uuid,
-		timestamp with time zone '2017-10-2 15:05:11',
+		timestamp '2017-10-2 15:05:11',
 		15::real,
 		from_control_stability('requested'),
 		'2bcf60a9-cd37-4f27-a7ab-3e6b740770ed'::uuid

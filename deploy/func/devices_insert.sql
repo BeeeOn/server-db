@@ -39,9 +39,9 @@ $$
 		_refresh,
 		_battery,
 		_signal,
-		to_timestamp(_first_seen),
-		to_timestamp(_last_seen),
-		to_timestamp(_active_since)
+		beeeon.as_utc_timestamp(_first_seen),
+		beeeon.as_utc_timestamp(_last_seen),
+		beeeon.as_utc_timestamp(_active_since)
 	);
 $$ LANGUAGE SQL;
 

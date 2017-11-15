@@ -80,4 +80,12 @@ $$
 			AND t.typname = name;
 $$ LANGUAGE SQL;
 
+CREATE OR REPLACE FUNCTION beeeon.as_utc_timestamp(unix bigint)
+RETURNS TIMESTAMP AS
+$$
+BEGIN
+	RETURN to_timestamp(unix) AT TIME ZONE 'UTC';
+END;
+$$ LANGUAGE plpgsql;
+
 COMMIT;

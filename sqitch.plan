@@ -95,3 +95,4 @@ type/fcm_token [schema-beeeon] 2017-09-26T14:39:25Z Jan Viktorin <iviktorin@fit.
 func/fcm_tokens_by_id [schema-beeeon type/fcm_token table/users table/fcm_tokens] 2017-09-01T16:22:42Z Peter Kubov <xkubov06@stud.fit.vutbr.cz> # beeeon: implements fcm_tokens_by_id
 func/fcm_recipients_by_gateway [schema-beeeon type/fcm_token table/users table/verified_identities table/roles_in_gateway table/fcm_tokens] 2017-11-29T16:53:29Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement fcm_recipients_by_gateway
 as_utc_timestamp_us [schema-beeeon] 2017-12-06T15:30:47Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: modify introduce function as_utc_timestamp_us()
+table/sensor_history_last [schema-beeeon table/devices table/gateways table/sensor_history_recent] 2017-07-17T15:12:30Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new materialized view sensor_history_last

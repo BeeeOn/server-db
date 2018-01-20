@@ -2,9 +2,8 @@
 
 BEGIN;
 
-SELECT beeeon.assure_function(
-	'beeeon',
-	'sensor_history_recent_insert(bigint, bigint, smallint, timestamp, real)'
-);
+SELECT 0 / CASE WHEN COUNT(*) > 0 THEN 0 ELSE 1 END
+	FROM pg_proc JOIN pg_namespace ON pronamespace = pg_namespace.oid
+	WHERE proname = 'sensor_history_recent_insert' AND nspname = 'beeeon';
 
 ROLLBACK;

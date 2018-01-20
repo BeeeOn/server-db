@@ -4,11 +4,14 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query $$ `cat _api/fcm_tokens.fetch.by.id.sql`; $$
+
 BEGIN;
 
-SELECT plan(2);
+CREATE OR REPLACE FUNCTION fcm_tokens_by_id(varchar)
+RETURNS SETOF beeeon.fcm_token AS :query LANGUAGE SQL;
 
-SELECT has_function('fcm_tokens_by_id');
+SELECT plan(1);
 
 INSERT INTO users (id, first_name, last_name, locale)
 VALUES ('608aad61-5665-482a-918d-098a35602520', 'Franta', 'Bubak', 'cs_CZ');

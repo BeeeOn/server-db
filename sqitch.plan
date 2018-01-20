@@ -116,3 +116,4 @@ func/users_by_id [func/users_by_id@prealpha] 2018-01-30T21:40:54Z Jan Viktorin <
 func/fcm_tokens_insert [func/fcm_tokens_insert@prealpha] 2018-01-30T21:51:11Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function fcm_tokens_insert
 func/fcm_tokens_remove [func/fcm_tokens_remove@prealpha] 2018-01-30T21:56:26Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function fcm_tokens_remove
 func/fcm_tokens_replace [func/fcm_tokens_replace@prealpha] 2018-01-30T22:06:18Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function fcm_tokens_replace
+func/fcm_tokens_by_id [func/fcm_tokens_by_id@prealpha] 2018-01-30T22:17:25Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function fcm_tokens_by_id

@@ -4,11 +4,14 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query $$ `cat _api/devices_properties.fetch.by.device.sql`; $$
+
 BEGIN;
 
-SELECT plan(2);
+CREATE OR REPLACE FUNCTION device_properties_by_device(numeric, bigint)
+RETURNS SETOF beeeon.device_property AS :query LANGUAGE SQL;
 
-SELECT has_function('device_properties_by_device');
+SELECT plan(1);
 
 SELECT is_empty(
 	$$ SELECT * FROM device_properties_by_device(11678152912333531136, 1240795450208837) $$,

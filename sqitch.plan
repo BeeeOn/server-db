@@ -135,3 +135,4 @@ func/legacy_gateways_accessible [func/legacy_gateways_accessible@prealpha] 2018-
 func/devices_insert [func/devices_insert@prealpha] 2018-02-01T19:25:24Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function devices_insert
 func/devices_update [func/devices_update@prealpha] 2018-02-01T19:40:38Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function devices_update
 func/devices_by_id_and_gateway [func/devices_by_id_and_gateway@prealpha] 2018-02-02T12:46:33Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function devices_by_id_and_gateway
+func/devices_active_by_gateway [func/devices_active_by_gateway@prealpha] 2018-02-02T12:51:36Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function devices_active_by_gateway

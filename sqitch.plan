@@ -152,3 +152,4 @@ func/roles_in_gateway_remove_user [func/roles_in_gateway_remove_user@prealpha] 2
 func/roles_in_gateway_remove_gateway_all [func/roles_in_gateway_remove_gateway_all@prealpha] 2018-02-08T13:10:38Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function roles_in_gateway_remove_gateway_all
 func/roles_in_gateway_is_user [func/roles_in_gateway_is_user@prealpha] 2018-02-08T13:37:24Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function roles_in_gateway_is_user
 func/roles_in_gateway_is_registered [func/roles_in_gateway_is_registered@prealpha] 2018-02-08T13:52:19Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function roles_in_gateway_is_registered
+func/roles_in_gateway_has_only_given_level_except [func/roles_in_gateway_has_only_given_level_except@prealpha] 2018-02-08T13:56:05Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function roles_in_gateway_has_only_given_level_except

@@ -140,3 +140,4 @@ func/devices_inactive_by_gateway [func/devices_inactive_by_gateway@prealpha] 201
 func/devices_active_by_idrange_and_gateway [func/devices_active_by_idrange_and_gateway@prealpha] 2018-02-02T13:00:24Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function devices_active_by_idrange_and_gateway
 func/device_properties_insert [func/device_properties_insert@prealpha] 2018-02-06T14:35:10Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function device_properties_insert
 func/device_properties_update [func/device_properties_update@prealpha] 2018-02-06T14:41:52Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function device_properties_update
+func/device_properties_remove [func/device_properties_remove@prealpha] 2018-02-06T14:46:05Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function device_properties_remove

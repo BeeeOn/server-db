@@ -4,11 +4,14 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query $$ `cat _api/locations.fetch.by.gateway_id.sql`; $$
+
 BEGIN;
 
-SELECT plan(2);
+CREATE OR REPLACE FUNCTION locations_by_gateway(bigint)
+RETURNS SETOF beeeon.location AS :query LANGUAGE SQL;
 
-SELECT has_function('locations_by_gateway');
+SELECT plan(1);
 
 SELECT is_empty(
 	$$ SELECT * FROM locations_by_gateway(1115569803521760) $$,

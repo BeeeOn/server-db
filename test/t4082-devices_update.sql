@@ -4,23 +4,28 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query '$$ BEGIN '`cat _api/devices.update.sql`; 'RETURN FOUND; END;' $$
+
 BEGIN;
 
-SELECT plan(4);
+CREATE OR REPLACE FUNCTION devices_update(
+	uuid, varchar(250), smallint, integer,
+	smallint, smallint, bigint, numeric(20, 0), bigint)
+RETURNS boolean AS :query LANGUAGE plpgsql;
 
-SELECT has_function('devices_update');
+SELECT plan(3);
 
 SELECT ok(
 	NOT devices_update(
-		11678152912333531136::numeric(20, 0),
-		1240795450208837::bigint,
 		'e7288b22-8990-4bac-a71b-836112bc3719'::uuid,
 		'testing device',
 		0::smallint,
 		40,
 		100::smallint,
 		100::smallint,
-		NULL::bigint
+		NULL::bigint,
+		11678152912333531136::numeric(20, 0),
+		1240795450208837::bigint
 	),
 	'there is nothing to update'
 );
@@ -53,15 +58,15 @@ VALUES (
 
 SELECT ok(
 	devices_update(
-		11678152912333531136::numeric(20, 0),
-		1240795450208837::bigint,
 		NULL::uuid,
 		'testing device 2',
 		0::smallint,
 		50,
 		99::smallint,
 		50::smallint,
-		extract(epoch FROM timestamp '2017-7-20 23:23:23')::bigint
+		extract(epoch FROM timestamp '2017-7-20 23:23:23')::bigint,
+		11678152912333531136::numeric(20, 0),
+		1240795450208837::bigint
 	),
 	'update should work, device exists'
 );

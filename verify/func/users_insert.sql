@@ -2,9 +2,8 @@
 
 BEGIN;
 
-SELECT beeeon.assure_function(
-	'beeeon',
-	'users_insert(uuid, varchar(250), varchar(250), varchar(32))'
-);
+SELECT 0 / CASE WHEN COUNT(*) > 0 THEN 0 ELSE 1 END
+	FROM pg_proc JOIN pg_namespace ON pronamespace = pg_namespace.oid
+	WHERE proname = 'users_insert' AND nspname = 'beeeon';
 
 ROLLBACK;

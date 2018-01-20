@@ -111,3 +111,4 @@ func/locations_by_gateway [func/locations_by_gateway@prealpha] 2018-01-29T17:23:
 func/locations_by_id_and_gateway [func/locations_by_id_and_gateway@prealpha] 2018-01-29T17:28:32Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function locations_by_id_and_gateway
 func/locations_update [func/locations_update@prealpha] 2018-01-29T17:33:00Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function locations_update
 func/locations_remove [func/locations_remove@prealpha] 2018-01-29T17:39:08Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function locations_remove
+func/users_insert [func/users_insert@prealpha] 2018-01-30T21:37:16Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function users_insert

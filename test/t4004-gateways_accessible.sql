@@ -4,15 +4,18 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query $$ `cat _api/gateways.fetch.accessible.sql`; $$
+
 BEGIN;
 
-SELECT plan(4);
+CREATE OR REPLACE FUNCTION gateways_accessible(uuid)
+RETURNS SETOF beeeon.gateway_with_status AS :query LANGUAGE SQL;
 
-SELECT has_function('gateways_accessible');
+SELECT plan(3);
 
 SELECT ok(
 	NOT EXISTS(
-		SELECT gateways_accessible('d2cc524a-a9ab-4f91-9b2e-aa67399a5485')
+		SELECT * FROM gateways_accessible('d2cc524a-a9ab-4f91-9b2e-aa67399a5485')
 	),
 	'no such user and anything, so no result is expected'
 );

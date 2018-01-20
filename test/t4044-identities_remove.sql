@@ -4,11 +4,14 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query '$$ BEGIN '`cat _api/identities.remove.sql`; 'RETURN FOUND; END;' $$
+
 BEGIN;
 
-SELECT plan(6);
+CREATE OR REPLACE FUNCTION identities_remove(uuid)
+RETURNS boolean AS :query LANGUAGE plpgsql;
 
-SELECT has_function('identities_remove');
+SELECT plan(5);
 
 SELECT ok(NOT EXISTS(
 	SELECT 1 FROM beeeon.identities

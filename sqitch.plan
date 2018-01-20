@@ -129,3 +129,4 @@ func/verified_identities_by_email_and_provider [func/verified_identities_by_emai
 func/verified_identities_by_email [func/verified_identities_by_email@prealpha] 2018-02-01T16:49:08Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function verified_identities_by_email
 func/verified_identities_by_user [func/verified_identities_by_user@prealpha] 2018-02-01T16:53:49Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function verified_identities_by_user
 func/verified_identities_update [func/verified_identities_update@prealpha] 2018-02-01T16:56:48Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function verified_identities_update
+func/verified_identities_remove [func/verified_identities_remove@prealpha] 2018-02-01T17:02:16Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function verified_identities_remove

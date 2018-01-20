@@ -5,15 +5,17 @@ RESET client_min_messages;
 SET search_path TO beeeon, public;
 
 \set query_identity '$$ '`cat _api/roles_in_gateway.can.see.identity.sql`' $$'
+\set query_verified_identity '$$ '`cat _api/roles_in_gateway.can.see.verified_identity.sql`' $$'
 
 BEGIN;
 
 CREATE OR REPLACE FUNCTION roles_in_gateway_can_see_identity(uuid, uuid)
 RETURNS boolean AS :query_identity LANGUAGE SQL;
 
-SELECT plan(8);
+CREATE OR REPLACE FUNCTION roles_in_gateway_can_see_verified_identity(uuid, uuid)
+RETURNS boolean AS :query_verified_identity LANGUAGE SQL;
 
-SELECT has_function('roles_in_gateway_can_see_verified_identity');
+SELECT plan(7);
 
 SELECT ok(
 	NOT beeeon.roles_in_gateway_can_see_identity(

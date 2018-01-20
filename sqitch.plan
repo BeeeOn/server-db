@@ -104,3 +104,4 @@ func/gateways_insert [func/gateways_insert@prealpha] 2018-01-21T00:23:17Z Jan Vi
 func/gateways_by_id [func/gateways_by_id@prealpha] 2018-01-21T00:35:01Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function gateways_by_id
 func/gateways_update [func/gateways_update@prealpha] 2018-01-21T00:45:44Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function gateways_update
 func/gateways_accessible [func/gateways_accessible@prealpha] 2018-01-20T23:15:19Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function gateways_accessible
+func/gateways_status_insert_or_skip [func/gateways_status_insert_or_skip@prealpha] 2018-01-29T15:32:11Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function gateways_status_insert_or_skip

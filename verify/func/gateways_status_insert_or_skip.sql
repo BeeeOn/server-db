@@ -2,9 +2,8 @@
 
 BEGIN;
 
-SELECT beeeon.assure_function(
-	'beeeon',
-	'gateways_status_insert_or_skip(bigint, bigint, varchar(40), varchar(45))'
-);
+SELECT 0 / CASE WHEN COUNT(*) > 0 THEN 0 ELSE 1 END
+	FROM pg_proc JOIN pg_namespace ON pronamespace = pg_namespace.oid
+	WHERE proname = 'gateways_status_insert_or_skip' AND nspname = 'beeeon';
 
 ROLLBACK;

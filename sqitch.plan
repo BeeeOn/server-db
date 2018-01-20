@@ -149,3 +149,4 @@ func/roles_in_gateway_by_id [func/roles_in_gateway_by_id@prealpha] 2018-02-08T12
 func/roles_in_gateway_by_gateway [func/roles_in_gateway_by_gateway@prealpha] 2018-02-08T12:42:17Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function roles_in_gateway_by_gateway
 func/roles_in_gateway_remove [func/roles_in_gateway_remove@prealpha] 2018-02-08T12:58:03Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function roles_in_gateway_remove
 func/roles_in_gateway_remove_user [func/roles_in_gateway_remove_user@prealpha] 2018-02-08T13:03:00Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function roles_in_gateway_remove_user
+func/roles_in_gateway_remove_gateway_all [func/roles_in_gateway_remove_gateway_all@prealpha] 2018-02-08T13:10:38Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function roles_in_gateway_remove_gateway_all

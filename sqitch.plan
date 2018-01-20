@@ -161,3 +161,4 @@ func/legacy_roles_in_gateway_by_id [func/legacy_roles_in_gateway_by_id@prealpha]
 func/legacy_roles_in_gateway_by_gateway [func/legacy_roles_in_gateway_by_gateway@prealpha] 2018-02-08T12:53:14Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function legacy_roles_in_gateway_by_gateway
 as_utc_timestamp_us [as_utc_timestamp_us@prealpha] 2018-02-09T16:42:09Z Jan Viktorin <iviktorin@fit.vutbr.cz> # fix as_utc_timestamp_us to work with pgsql older than 9.4
 func/sensor_history_recent_insert [func/sensor_history_recent_insert@prealpha] 2018-02-08T16:07:00Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function sensor_history_recent_insert
+func/sensor_history_last_value [func/sensor_history_last_value@prealpha] 2018-02-08T16:54:06Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function sensor_history_last_value

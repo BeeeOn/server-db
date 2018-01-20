@@ -101,3 +101,4 @@ table/controls_fsm [schema-beeeon table/devices table/gateways table/sensor_hist
 func/controls_recent_state [func/controls_recent_state@prealpha] 2018-01-22T13:48:26Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: drop function controls_recent_state
 table/controls_recent [table/controls_recent@prealpha] 2018-01-22T13:57:03Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: drop table controls_recent
 func/gateways_insert [func/gateways_insert@prealpha] 2018-01-21T00:23:17Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function gateways_insert
+func/gateways_by_id [func/gateways_by_id@prealpha] 2018-01-21T00:35:01Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function gateways_by_id

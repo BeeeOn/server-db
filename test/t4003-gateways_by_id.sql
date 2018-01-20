@@ -4,11 +4,14 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query $$ `cat _api/gateways.fetch.by.id.sql`; $$
+
 BEGIN;
 
-SELECT plan(7);
+CREATE OR REPLACE FUNCTION gateways_by_id(bigint)
+RETURNS SETOF beeeon.gateway_with_status AS :query LANGUAGE SQL;
 
-SELECT has_function('gateways_by_id');
+SELECT plan(6);
 
 SELECT is_empty(
 	$$ SELECT * FROM gateways_by_id(1240795450208837) $$,

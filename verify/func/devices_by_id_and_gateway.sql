@@ -2,9 +2,9 @@
 
 BEGIN;
 
-SELECT beeeon.assure_function(
-	'beeeon',
-	'devices_by_id_and_gateway(numeric(20, 0), bigint)'
-);
+
+SELECT 0 / CASE WHEN COUNT(*) > 0 THEN 0 ELSE 1 END
+	FROM pg_proc JOIN pg_namespace ON pronamespace = pg_namespace.oid
+	WHERE proname = 'devices_by_id_and_gateway' AND nspname = 'beeeon';
 
 ROLLBACK;

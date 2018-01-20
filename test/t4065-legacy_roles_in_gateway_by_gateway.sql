@@ -4,11 +4,26 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query $$ `cat _api/legacy_roles_in_gateway.fetch.by.gateway_id.sql`; $$
+
 BEGIN;
 
-SELECT plan(2);
+CREATE OR REPLACE FUNCTION legacy_roles_in_gateway_by_gateway(bigint)
+RETURNS TABLE (
+	id uuid,
+	gateway_id bigint,
+	identity_id uuid,
+	level smallint,
+	created bigint,
+	identity_email varchar(250),
+	first_name varchar(250),
+	last_name varchar(250),
+	picture varchar(250),
+	is_owner boolean
+)
+AS :query LANGUAGE SQL;
 
-SELECT has_function('legacy_roles_in_gateway_by_gateway');
+SELECT plan(1);
 
 SELECT is_empty(
 	$$ SELECT * FROM legacy_roles_in_gateway_by_gateway(1240795450208837) $$,

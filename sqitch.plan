@@ -158,3 +158,4 @@ func/roles_in_gateway_can_see_verified_identity [func/roles_in_gateway_can_see_v
 func/roles_in_gateway_access_level [func/roles_in_gateway_access_level@prealpha] 2018-02-08T15:32:57Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function roles_in_gateway_access_level
 func/roles_in_gateway_accessible_gateways [func/roles_in_gateway_accessible_gateways@prealpha] 2018-02-08T15:36:59Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function roles_in_gateway_accessible_gateways
 func/legacy_roles_in_gateway_by_id [func/legacy_roles_in_gateway_by_id@prealpha] 2018-02-08T15:56:57Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function legacy_roles_in_gateway_by_id
+func/legacy_roles_in_gateway_by_gateway [func/legacy_roles_in_gateway_by_gateway@prealpha] 2018-02-08T12:53:14Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function legacy_roles_in_gateway_by_gateway

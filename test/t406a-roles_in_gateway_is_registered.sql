@@ -4,11 +4,14 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query '$$ '`cat _api/roles_in_gateway.is.registered.sql`' $$'
+
 BEGIN;
 
-SELECT plan(2);
+CREATE OR REPLACE FUNCTION roles_in_gateway_is_registered(bigint)
+RETURNS boolean AS :query LANGUAGE SQL;
 
-SELECT has_function('roles_in_gateway_is_registered');
+SELECT plan(1);
 
 SELECT ok(
 	NOT roles_in_gateway_is_registered(1240795450208837),

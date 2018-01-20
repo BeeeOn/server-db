@@ -137,3 +137,4 @@ func/devices_update [func/devices_update@prealpha] 2018-02-01T19:40:38Z Jan Vikt
 func/devices_by_id_and_gateway [func/devices_by_id_and_gateway@prealpha] 2018-02-02T12:46:33Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function devices_by_id_and_gateway
 func/devices_active_by_gateway [func/devices_active_by_gateway@prealpha] 2018-02-02T12:51:36Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function devices_active_by_gateway
 func/devices_inactive_by_gateway [func/devices_inactive_by_gateway@prealpha] 2018-02-02T12:56:31Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function devices_inactive_by_gateway
+func/devices_active_by_idrange_and_gateway [func/devices_active_by_idrange_and_gateway@prealpha] 2018-02-02T13:00:24Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function devices_active_by_idrange_and_gateway

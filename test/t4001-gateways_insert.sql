@@ -4,14 +4,18 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query `cat _api/gateways.create.sql`
+
 BEGIN;
 
-SELECT plan(4);
+PREPARE gateways_insert(
+	bigint, varchar, integer, double precision, double precision, varchar)
+AS :query;
 
-SELECT has_function('gateways_insert');
+SELECT plan(3);
 
 SELECT lives_ok(
-	$$ SELECT gateways_insert(1240795450208837, 'first gateway', 3, 2.0, 1.0, 'Europe/Brussels') $$,
+	$$ EXECUTE gateways_insert(1240795450208837, 'first gateway', 3, 2.0, 1.0, 'Europe/Brussels') $$,
 	'no reason to fail on constraints'
 );
 
@@ -34,7 +38,7 @@ SELECT ok(EXISTS(
 );
 
 SELECT throws_ok(
-	$$ SELECT gateways_insert(1240795450208837, 'first gateway', 0, 0.0, 0.0, 'Europe/London') $$,
+	$$ EXECUTE gateways_insert(1240795450208837, 'first gateway', 0, 0.0, 0.0, 'Europe/London') $$,
 	23505,
 	NULL,
 	'primary key violation when creating the same gateway twice'

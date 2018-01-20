@@ -108,3 +108,4 @@ func/gateways_status_insert_or_skip [func/gateways_status_insert_or_skip@prealph
 func/locations_insert [func/locations_insert@prealpha] 2018-01-29T16:00:28Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function locations_insert
 func/locations_by_id [func/locations_by_id@prealpha] 2018-01-29T16:05:14Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function locations_by_id
 func/locations_by_gateway [func/locations_by_gateway@prealpha] 2018-01-29T17:23:22Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function locations_by_gateway
+func/locations_by_id_and_gateway [func/locations_by_id_and_gateway@prealpha] 2018-01-29T17:28:32Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function locations_by_id_and_gateway

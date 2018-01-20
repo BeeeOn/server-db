@@ -146,3 +146,4 @@ func/device_properties_by_device [func/device_properties_by_device@prealpha] 201
 func/roles_in_gateway_insert [func/roles_in_gateway_insert@prealpha] 2018-02-07T15:03:19Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function roles_in_gateway_insert
 func/roles_in_gateway_update [func/roles_in_gateway_update@prealpha] 2018-02-07T15:08:06Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function roles_in_gateway_update
 func/roles_in_gateway_by_id [func/roles_in_gateway_by_id@prealpha] 2018-02-08T12:37:40Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function roles_in_gateway_by_id
+func/roles_in_gateway_by_gateway [func/roles_in_gateway_by_gateway@prealpha] 2018-02-08T12:42:17Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function roles_in_gateway_by_gateway

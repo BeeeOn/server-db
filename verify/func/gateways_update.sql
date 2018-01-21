@@ -2,9 +2,8 @@
 
 BEGIN;
 
-SELECT beeeon.assure_function(
-	'beeeon',
-	'gateways_update(bigint, varchar(250), integer, double precision, double precision, varchar(64))'
-);
+SELECT 0 / CASE WHEN COUNT(*) > 0 THEN 0 ELSE 1 END
+	FROM pg_proc JOIN pg_namespace ON pronamespace = pg_namespace.oid
+	WHERE proname = 'gateways_update' AND nspname = 'beeeon';
 
 ROLLBACK;

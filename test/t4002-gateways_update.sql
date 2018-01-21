@@ -4,11 +4,15 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query '$$ BEGIN '`cat _api/gateways.update.sql`; 'RETURN FOUND; END;' $$
+
 BEGIN;
 
-SELECT plan(4);
+CREATE OR REPLACE FUNCTION gateways_update(
+	bigint, varchar, integer, double precision, double precision, varchar(64))
+RETURNS boolean AS :query LANGUAGE plpgsql;
 
-SELECT has_function('gateways_update');
+SELECT plan(3);
 
 SELECT ok(
 	NOT gateways_update(1522979621558401, 'second gateway', 0, 0.0, 0.0, 'Europe/Paris')

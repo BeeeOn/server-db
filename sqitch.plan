@@ -98,3 +98,4 @@ as_utc_timestamp_us [schema-beeeon] 2017-12-06T15:30:47Z Jan Viktorin <iviktorin
 table/sensor_history_last [schema-beeeon table/devices table/gateways table/sensor_history_recent] 2017-07-17T15:12:30Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new materialized view sensor_history_last
 table/controls_fsm [schema-beeeon table/devices table/gateways table/sensor_history_recent] 2018-01-15T13:14:21Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table controls_fsm
 @prealpha 2018-01-22T13:47:21Z Jan Viktorin <iviktorin@fit.vutbr.cz> # Experimental database schema, not recommended for production
+func/controls_recent_state [func/controls_recent_state@prealpha] 2018-01-22T13:48:26Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: drop function controls_recent_state

@@ -96,3 +96,7 @@ func/fcm_tokens_by_id [schema-beeeon type/fcm_token table/users table/fcm_tokens
 func/fcm_recipients_by_gateway [schema-beeeon type/fcm_token table/users table/verified_identities table/roles_in_gateway table/fcm_tokens] 2017-11-29T16:53:29Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement fcm_recipients_by_gateway
 as_utc_timestamp_us [schema-beeeon] 2017-12-06T15:30:47Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: modify introduce function as_utc_timestamp_us()
 table/sensor_history_last [schema-beeeon table/devices table/gateways table/sensor_history_recent] 2017-07-17T15:12:30Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new materialized view sensor_history_last
+table/controls_fsm [schema-beeeon table/devices table/gateways table/sensor_history_recent] 2018-01-15T13:14:21Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table controls_fsm
+@prealpha 2018-01-22T13:47:21Z Jan Viktorin <iviktorin@fit.vutbr.cz> # Experimental database schema, not recommended for production
+func/controls_recent_state [func/controls_recent_state@prealpha] 2018-01-22T13:48:26Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: drop function controls_recent_state
+table/controls_recent [table/controls_recent@prealpha] 2018-01-22T13:57:03Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: drop table controls_recent

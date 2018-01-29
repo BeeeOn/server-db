@@ -100,3 +100,8 @@ table/controls_fsm [schema-beeeon table/devices table/gateways table/sensor_hist
 @prealpha 2018-01-22T13:47:21Z Jan Viktorin <iviktorin@fit.vutbr.cz> # Experimental database schema, not recommended for production
 func/controls_recent_state [func/controls_recent_state@prealpha] 2018-01-22T13:48:26Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: drop function controls_recent_state
 table/controls_recent [table/controls_recent@prealpha] 2018-01-22T13:57:03Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: drop table controls_recent
+func/gateways_insert [func/gateways_insert@prealpha] 2018-01-21T00:23:17Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function gateways_insert
+func/gateways_by_id [func/gateways_by_id@prealpha] 2018-01-21T00:35:01Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function gateways_by_id
+func/gateways_update [func/gateways_update@prealpha] 2018-01-21T00:45:44Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function gateways_update
+func/gateways_accessible [func/gateways_accessible@prealpha] 2018-01-20T23:15:19Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function gateways_accessible
+func/gateways_status_insert_or_skip [func/gateways_status_insert_or_skip@prealpha] 2018-01-29T15:32:11Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function gateways_status_insert_or_skip

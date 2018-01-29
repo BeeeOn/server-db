@@ -4,18 +4,22 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query `cat _api/gateways_status.insert.sql`
+
 BEGIN;
 
-SELECT plan(14);
+PREPARE gateways_status_insert_or_skip(
+	bigint, bigint, varchar, varchar)
+AS :query;
 
-SELECT has_function('gateways_status_insert_or_skip');
+SELECT plan(13);
 
 SELECT is(COUNT(*)::integer, 0, 'there should be no status of 1151460236578635 yet')
 	FROM gateways_status
 	WHERE gateway_id = 1151460236578635;
 
 SELECT throws_ok(
-	$$ SELECT gateways_status_insert_or_skip(
+	$$ EXECUTE gateways_status_insert_or_skip(
 		1151460236578635,
 		extract(epoch FROM timestamp '2017-7-7 22:29:51')::bigint,
 		'master',
@@ -31,7 +35,7 @@ INSERT INTO gateways (id, name, altitude, latitude, longitude)
 	VALUES (1151460236578635, 'testing', 1, 2, 3);
 
 SELECT lives_ok(
-	$$ SELECT gateways_status_insert_or_skip(
+	$$ EXECUTE gateways_status_insert_or_skip(
 		1151460236578635,
 		extract(epoch FROM timestamp '2017-7-7 22:29:51')::bigint,
 		'master',
@@ -55,7 +59,7 @@ SELECT ok(EXISTS(
 );
 
 SELECT lives_ok(
-	$$ SELECT gateways_status_insert_or_skip(
+	$$ EXECUTE gateways_status_insert_or_skip(
 		1151460236578635,
 		extract(epoch FROM timestamp '2017-7-8 01:16:31')::bigint,
 		'master',
@@ -86,7 +90,7 @@ SELECT results_eq(
 );
 
 SELECT lives_ok(
-	$$ SELECT gateways_status_insert_or_skip(
+	$$ EXECUTE gateways_status_insert_or_skip(
 		1151460236578635,
 		extract(epoch FROM timestamp '2017-7-8 06:49:51')::bigint,
 		'testing',
@@ -110,7 +114,7 @@ SELECT ok(EXISTS(
 );
 
 SELECT lives_ok(
-	$$ SELECT gateways_status_insert_or_skip(
+	$$ EXECUTE gateways_status_insert_or_skip(
 		1151460236578635,
 		extract(epoch FROM timestamp '2017-7-8 07:23:11')::bigint,
 		'testing',
@@ -134,7 +138,7 @@ SELECT ok(EXISTS(
 );
 
 SELECT lives_ok(
-	$$ SELECT gateways_status_insert_or_skip(
+	$$ EXECUTE gateways_status_insert_or_skip(
 		1151460236578635,
 		extract(epoch from timestamp '2017-10-30 05:53:11')::bigint,
 		'master',

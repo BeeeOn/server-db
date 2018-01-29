@@ -105,3 +105,9 @@ func/gateways_by_id [func/gateways_by_id@prealpha] 2018-01-21T00:35:01Z Jan Vikt
 func/gateways_update [func/gateways_update@prealpha] 2018-01-21T00:45:44Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function gateways_update
 func/gateways_accessible [func/gateways_accessible@prealpha] 2018-01-20T23:15:19Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function gateways_accessible
 func/gateways_status_insert_or_skip [func/gateways_status_insert_or_skip@prealpha] 2018-01-29T15:32:11Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function gateways_status_insert_or_skip
+func/locations_insert [func/locations_insert@prealpha] 2018-01-29T16:00:28Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function locations_insert
+func/locations_by_id [func/locations_by_id@prealpha] 2018-01-29T16:05:14Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function locations_by_id
+func/locations_by_gateway [func/locations_by_gateway@prealpha] 2018-01-29T17:23:22Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function locations_by_gateway
+func/locations_by_id_and_gateway [func/locations_by_id_and_gateway@prealpha] 2018-01-29T17:28:32Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function locations_by_id_and_gateway
+func/locations_update [func/locations_update@prealpha] 2018-01-29T17:33:00Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function locations_update
+func/locations_remove [func/locations_remove@prealpha] 2018-01-29T17:39:08Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function locations_remove

@@ -4,14 +4,17 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query `cat _api/users.create.sql`
+
 BEGIN;
 
-SELECT plan(2);
+PREPARE users_insert(uuid, varchar, varchar, varchar)
+AS :query;
 
-SELECT has_function('users_insert');
+SELECT plan(1);
 
 SELECT lives_ok(
-	$$ SELECT users_insert('8c3e5613-7692-4915-951d-68362505e4ce', 'Franta', 'Bubak', 'cs_CZ') $$,
+	$$ EXECUTE users_insert('8c3e5613-7692-4915-951d-68362505e4ce', 'Franta', 'Bubak', 'cs_CZ') $$,
 	'no reason to fail on constraints'
 );
 

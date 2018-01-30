@@ -4,14 +4,17 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query `cat _api/fcm_tokens.create.sql`
+
 BEGIN;
 
-SELECT plan(5);
+PREPARE fcm_tokens_insert(varchar, uuid)
+AS :query;
 
-SELECT has_function('fcm_tokens_insert');
+SELECT plan(4);
 
 SELECT throws_ok(
-	$$ SELECT fcm_tokens_insert(
+	$$ EXECUTE fcm_tokens_insert(
 		'cdnvrVdlLzI:APA91bGsKYSZDhdoLlbzF0XSYHFf7MrEV7YoN3OsGiYR0EURDEEr7uG-ePiJRQYMi9LmLrzBwIJBphVaCZdcAKlJCE6uckwsYcTMpjVoNN7yQN2BPdvnNGGRJin6oHWJjfSMMiDvMAE5',
 		'608aad61-5665-482a-918d-098a35602520'
 	) $$,
@@ -24,7 +27,7 @@ INSERT INTO users (id, first_name, last_name, locale)
 VALUES ('608aad61-5665-482a-918d-098a35602520', 'Franta', 'Bubak', 'cs_CZ');
 
 SELECT lives_ok(
-	$$ SELECT fcm_tokens_insert(
+	$$ EXECUTE fcm_tokens_insert(
 		'cdnvrVdlLzI:APA91bGsKYSZDhdoLlbzF0XSYHFf7MrEV7YoN3OsGiYR0EURDEEr7uG-ePiJRQYMi9LmLrzBwIJBphVaCZdcAKlJCE6uckwsYcTMpjVoNN7yQN2BPdvnNGGRJin6oHWJjfSMMiDvMAE5',
 		'608aad61-5665-482a-918d-098a35602520'
 	) $$,
@@ -42,7 +45,7 @@ SELECT ok(EXISTS(
 );
 
 SELECT throws_ok(
-	$$ SELECT fcm_tokens_insert(
+	$$ EXECUTE fcm_tokens_insert(
 		'cdnvrVdlLzI:APA91bGsKYSZDhdoLlbzF0XSYHFf7MrEV7YoN3OsGiYR0EURDEEr7uG-ePiJRQYMi9LmLrzBwIJBphVaCZdcAKlJCE6uckwsYcTMpjVoNN7yQN2BPdvnNGGRJin6oHWJjfSMMiDvMAE5',
 		'608aad61-5665-482a-918d-098a35602520'
 	) $$,

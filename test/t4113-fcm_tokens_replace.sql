@@ -4,11 +4,14 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query '$$ BEGIN '`cat _api/fcm_tokens.replace.sql`; 'RETURN FOUND; END;' $$
+
 BEGIN;
 
-SELECT plan(5);
+CREATE OR REPLACE FUNCTION beeeon.fcm_tokens_replace(varchar, varchar)
+RETURNS boolean AS :query LANGUAGE plpgsql;
 
-SELECT has_function('fcm_tokens_replace');
+SELECT plan(4);
 
 SELECT ok(
 	NOT fcm_tokens_replace(

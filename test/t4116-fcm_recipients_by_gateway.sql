@@ -4,11 +4,14 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query $$ `cat _api/fcm_recipients.by_gateway.sql`; $$
+
 BEGIN;
 
-SELECT plan(5);
+CREATE OR REPLACE FUNCTION fcm_recipients_by_gateway(bigint)
+RETURNS SETOF beeeon.fcm_token AS :query LANGUAGE SQL;
 
-SELECT has_function('fcm_recipients_by_gateway');
+SELECT plan(4);
 
 SELECT is_empty(
 	$$ SELECT * FROM fcm_recipients_by_gateway(1240795450208837) $$,

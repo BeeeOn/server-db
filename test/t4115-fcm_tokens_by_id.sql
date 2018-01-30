@@ -22,11 +22,6 @@ VALUES ('adnvrVdlLzI:'
 	'ePiJRQYMi9LmLrzBwIJBphVaCZdcAKlJCE6uckwsYcTMpjVoNN7yQN2BPdvnNGGRJin6oHWJjfSMMiDvMAE5',
 	'608aad61-5665-482a-918d-098a35602520');
 
-SELECT * FROM fcm_tokens_by_id(
-	'adnvrVdlLzI:'
-	'APA91bGsKYSZDhdoLlbzF0XSYHFf7MrEV7YoN3OsGiYR0EURDEEr7uG-'
-	'ePiJRQYMi9LmLrzBwIJBphVaCZdcAKlJCE6uckwsYcTMpjVoNN7yQN2BPdvnNGGRJin6oHWJjfSMMiDvMAE5');
-
 SELECT results_eq(
 	$$ SELECT * FROM fcm_tokens_by_id(
 		'adnvrVdlLzI:'

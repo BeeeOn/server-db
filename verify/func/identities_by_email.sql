@@ -2,9 +2,8 @@
 
 BEGIN;
 
-SELECT beeeon.assure_function(
-	'beeeon',
-	'identities_by_email(varchar(250))'
-);
+SELECT 0 / CASE WHEN COUNT(*) > 0 THEN 0 ELSE 1 END
+	FROM pg_proc JOIN pg_namespace ON pronamespace = pg_namespace.oid
+	WHERE proname = 'identities_by_email' AND nspname = 'beeeon';
 
 ROLLBACK;

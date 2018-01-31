@@ -119,3 +119,7 @@ func/fcm_tokens_replace [func/fcm_tokens_replace@prealpha] 2018-01-30T22:06:18Z 
 func/fcm_tokens_by_id [func/fcm_tokens_by_id@prealpha] 2018-01-30T22:17:25Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function fcm_tokens_by_id
 func/fcm_tokens_by_user_id [func/fcm_tokens_by_user_id@prealpha] 2018-01-30T22:24:58Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function fcm_tokens_by_user_id
 func/fcm_recipients_by_gateway [func/fcm_recipients_by_gateway@prealpha] 2018-01-30T22:29:13Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function fcm_recipients_by_gateway
+func/identities_insert [func/identities_insert@prealpha] 2018-01-31T16:05:48Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function identities_insert
+func/identities_by_id [func/identities_by_id@prealpha] 2018-01-31T16:10:23Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function identities_by_id
+func/identities_by_email [func/identities_by_email@prealpha] 2018-01-31T16:13:56Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function identities_by_email
+func/identities_remove [func/identities_remove@prealpha] 2018-01-31T16:17:35Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function identities_remove

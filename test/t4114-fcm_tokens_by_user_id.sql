@@ -4,7 +4,7 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
-\set query $$ `cat _api/fcm_tokens.fetch.by.user.id.sql`; $$
+\set query $$ `cat _api/fcm_tokens.fetch_by_user_id.sql`; $$
 
 BEGIN;
 

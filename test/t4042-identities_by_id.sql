@@ -4,7 +4,7 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
-\set query $$ `cat _api/identities.fetch.by.id.sql`; $$
+\set query $$ `cat _api/identities.fetch_by_id.sql`; $$
 
 BEGIN;
 

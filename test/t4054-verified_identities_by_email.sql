@@ -4,7 +4,7 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
-\set query $$ `cat _api/verified_identities.fetch.by.email.sql`; $$
+\set query $$ `cat _api/verified_identities.fetch_by_email.sql`; $$
 
 BEGIN;
 

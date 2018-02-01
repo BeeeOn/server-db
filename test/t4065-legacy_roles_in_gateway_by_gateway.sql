@@ -4,7 +4,7 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
-\set query $$ `cat _api/legacy_roles_in_gateway.fetch.by.gateway_id.sql`; $$
+\set query $$ `cat _api/legacy_roles_in_gateway.fetch_by_gateway_id.sql`; $$
 
 BEGIN;
 

@@ -7,3 +7,4 @@ beeeon.functions/create_utilities 2018-02-14T22:33:51Z Jan Viktorin <iviktorin@f
 beeeon.gateways/create 2018-02-01T18:27:04Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.gateways: create new table
 beeeon.gateways_status/create 2018-02-01T18:36:30Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.gateways_status: create new table
 beeeon.locations/create 2018-02-01T18:41:24Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.locations: create new table
+beeeon.devices/create 2018-02-01T18:34:28Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.devices: create new table

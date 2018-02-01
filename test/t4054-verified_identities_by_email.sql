@@ -4,11 +4,14 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query $$ `cat _api/verified_identities.fetch.by.email.sql`; $$
+
 BEGIN;
 
-SELECT plan(5);
+CREATE OR REPLACE FUNCTION verified_identities_by_email(varchar)
+RETURNS SETOF beeeon.verified_identity AS :query LANGUAGE SQL;
 
-SELECT has_function('verified_identities_by_email');
+SELECT plan(4);
 
 SELECT is_empty(
 	$$ SELECT * FROM verified_identities_by_email('franta1@example.org') $$,

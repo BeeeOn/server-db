@@ -9,3 +9,4 @@ beeeon.gateways_status/create 2018-02-01T18:36:30Z Jan Viktorin <iviktorin@fit.v
 beeeon.locations/create 2018-02-01T18:41:24Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.locations: create new table
 beeeon.devices/create 2018-02-01T18:34:28Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.devices: create new table
 beeeon.users/create 2018-02-01T18:42:25Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.users: create new table
+beeeon.identities/create 2018-02-01T18:44:24Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.identities: create new table

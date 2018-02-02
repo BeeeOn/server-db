@@ -4,11 +4,14 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query $$ `cat _api/devices.fetch.active.by.gateway.with.prefix.sql`; $$
+
 BEGIN;
 
-SELECT plan(2);
+CREATE OR REPLACE FUNCTION devices_active_by_idrange_and_gateway(bigint, numeric(20, 0), numeric(20, 0))
+RETURNS SETOF beeeon.device AS :query LANGUAGE SQL;
 
-SELECT has_function('devices_active_by_idrange_and_gateway');
+SELECT plan(1);
 
 SELECT is_empty(
 	$$ SELECT * FROM devices_active_by_idrange_and_gateway(1157178494608281, 11673330234144325632, 11745387828182253567) $$,

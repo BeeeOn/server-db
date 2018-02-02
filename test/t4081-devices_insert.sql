@@ -4,14 +4,17 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query `cat _api/devices.create.sql`
+
 BEGIN;
 
-SELECT plan(5);
+PREPARE devices_insert
+AS :query;
 
-SELECT has_function('devices_insert');
+SELECT plan(4);
 
 SELECT throws_ok(
-	$$ SELECT devices_insert(
+	$$ EXECUTE devices_insert(
 		11678152912333531136::numeric(20, 0),
 		1240795450208837,
 		'56ffcd4a-49f3-406f-a452-e0c734f4ed8a',
@@ -33,7 +36,7 @@ INSERT INTO gateways (id, name, altitude, latitude, longitude)
 VALUES (1240795450208837, 'testing gateway', 0, 0.0, 0.0);
 
 SELECT throws_ok(
-	$$ SELECT devices_insert(
+	$$ EXECUTE devices_insert(
 		11678152912333531136::numeric(20, 0),
 		1240795450208837,
 		'56ffcd4a-49f3-406f-a452-e0c734f4ed8a',
@@ -55,7 +58,7 @@ INSERT INTO locations (id, name)
 VALUES ('56ffcd4a-49f3-406f-a452-e0c734f4ed8a', 'testing location');
 
 SELECT lives_ok(
-	$$ SELECT devices_insert(
+	$$ EXECUTE devices_insert(
 		11678152912333531136::numeric(20, 0),
 		1240795450208837,
 		'56ffcd4a-49f3-406f-a452-e0c734f4ed8a',

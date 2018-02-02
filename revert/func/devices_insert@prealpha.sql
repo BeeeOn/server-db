@@ -3,10 +3,10 @@
 BEGIN;
 
 DROP FUNCTION beeeon.devices_insert(
-	numeric,
+	numeric(20, 0),
 	bigint,
 	uuid,
-	varchar,
+	varchar(250),
 	smallint,
 	integer,
 	smallint,

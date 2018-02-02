@@ -4,14 +4,17 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query `cat _api/fcm_tokens.remove.sql`
+
 BEGIN;
 
-SELECT plan(4);
+PREPARE fcm_tokens_remove(varchar)
+AS :query;
 
-SELECT has_function('fcm_tokens_remove');
+SELECT plan(3);
 
 SELECT lives_ok(
-	$$ SELECT fcm_tokens_remove('cdnvrVdlLzI:APA91bGsKYSZDhdoLlbzF0XSYHFf7MrEV7YoN3OsGiYR0EURDEEr7uG-ePiJRQYMi9LmLrzBwIJBphVaCZdcAKlJCE6uckwsYcTMpjVoNN7yQN2BPdvnNGGRJin6oHWJjfSMMiDvMAE5') $$,
+	$$ EXECUTE fcm_tokens_remove('cdnvrVdlLzI:APA91bGsKYSZDhdoLlbzF0XSYHFf7MrEV7YoN3OsGiYR0EURDEEr7uG-ePiJRQYMi9LmLrzBwIJBphVaCZdcAKlJCE6uckwsYcTMpjVoNN7yQN2BPdvnNGGRJin6oHWJjfSMMiDvMAE5') $$,
 	'removing of non-existing verified identity should not fail'
 );
 
@@ -23,7 +26,7 @@ VALUES ('cdnvrVdlLzI:APA91bGsKYSZDhdoLlbzF0XSYHFf7MrEV7YoN3OsGiYR0EURDEEr7uG-ePi
 	'608aad61-5665-482a-918d-098a35602520');
 
 SELECT lives_ok(
-	$$ SELECT fcm_tokens_remove(
+	$$ EXECUTE fcm_tokens_remove(
 		'cdnvrVdlLzI:APA91bGsKYSZDhdoLlbzF0XSYHFf7MrEV7YoN3OsGiYR0EURDEEr7uG-ePiJRQYMi9LmLrzBwIJBphVaCZdcAKlJCE6uckwsYcTMpjVoNN7yQN2BPdvnNGGRJin6oHWJjfSMMiDvMAE5'
 	) $$,
 	'no reason to fail to remove'

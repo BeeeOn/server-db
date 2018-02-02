@@ -4,11 +4,14 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query $$ `cat _api/verified_identities.fetch.by.id.sql`; $$
+
 BEGIN;
 
-SELECT plan(4);
+CREATE OR REPLACE FUNCTION verified_identities_by_id(uuid)
+RETURNS SETOF beeeon.verified_identity AS :query LANGUAGE SQL;
 
-SELECT has_function('verified_identities_by_id');
+SELECT plan(3);
 
 SELECT is_empty(
 	$$ SELECT * FROM verified_identities_by_id('17d49c4b-3515-400d-8f56-e893e592e0c2') $$,

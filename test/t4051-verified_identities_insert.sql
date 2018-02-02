@@ -4,14 +4,18 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query `cat _api/verified_identities.create.sql`
+
 BEGIN;
 
-SELECT plan(7);
+PREPARE verified_identities_insert(
+	uuid, uuid, uuid, varchar, varchar, varchar)
+AS :query;
 
-SELECT has_function('verified_identities_insert');
+SELECT plan(6);
 
 SELECT throws_ok(
-	$$ SELECT verified_identities_insert(
+	$$ EXECUTE verified_identities_insert(
 		'68445d80-9d7b-490d-b3b2-e9b4876be8c9',
 		'4f64fb33-056d-430f-8a8d-e66016ac473d',
 		'608aad61-5665-482a-918d-098a35602520',
@@ -28,7 +32,7 @@ INSERT INTO identities (id, email)
 VALUES ('4f64fb33-056d-430f-8a8d-e66016ac473d', 'test@example.org');
 
 SELECT throws_ok(
-	$$ SELECT verified_identities_insert(
+	$$ EXECUTE verified_identities_insert(
 		'68445d80-9d7b-490d-b3b2-e9b4876be8c9',
 		'4f64fb33-056d-430f-8a8d-e66016ac473d',
 		'608aad61-5665-482a-918d-098a35602520',
@@ -47,7 +51,7 @@ INSERT INTO users (id, first_name, last_name, locale)
 VALUES ('608aad61-5665-482a-918d-098a35602520', 'Franta', 'Bubak', 'cs_CZ');
 
 SELECT throws_ok(
-	$$ SELECT verified_identities_insert(
+	$$ EXECUTE verified_identities_insert(
 		'68445d80-9d7b-490d-b3b2-e9b4876be8c9',
 		'4f64fb33-056d-430f-8a8d-e66016ac473d',
 		'608aad61-5665-482a-918d-098a35602520',
@@ -64,7 +68,7 @@ INSERT INTO identities (id, email)
 VALUES ('4f64fb33-056d-430f-8a8d-e66016ac473d', 'test@example.org');
 
 SELECT lives_ok(
-	$$ SELECT verified_identities_insert(
+	$$ EXECUTE verified_identities_insert(
 		'68445d80-9d7b-490d-b3b2-e9b4876be8c9',
 		'4f64fb33-056d-430f-8a8d-e66016ac473d',
 		'608aad61-5665-482a-918d-098a35602520',
@@ -94,7 +98,7 @@ SELECT ok(EXISTS(
 );
 
 SELECT throws_ok(
-	$$ SELECT verified_identities_insert(
+	$$ EXECUTE verified_identities_insert(
 		'68445d80-9d7b-490d-b3b2-e9b4876be8c9',
 		'4f64fb33-056d-430f-8a8d-e66016ac473d',
 		'608aad61-5665-482a-918d-098a35602520',

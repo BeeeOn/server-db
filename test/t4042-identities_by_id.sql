@@ -4,11 +4,14 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query $$ `cat _api/identities.fetch.by.id.sql`; $$
+
 BEGIN;
 
-SELECT plan(2);
+CREATE OR REPLACE FUNCTION identities_by_id(uuid)
+RETURNS SETOF beeeon.identity AS :query LANGUAGE SQL;
 
-SELECT has_function('identities_by_id');
+SELECT plan(1);
 
 SELECT is_empty(
 	$$ SELECT * FROM identities_by_id('b6c168de-32c0-45a9-b23e-c936ac217ef1') $$,

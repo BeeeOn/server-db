@@ -4,11 +4,14 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query $$ `cat _api/devices.fetch.from.gateway.sql`; $$
+
 BEGIN;
 
-SELECT plan(2);
+CREATE OR REPLACE FUNCTION devices_by_id_and_gateway(numeric(20, 0), bigint)
+RETURNS SETOF beeeon.device AS :query LANGUAGE SQL;
 
-SELECT has_function('devices_by_id_and_gateway');
+SELECT plan(1);
 
 SELECT lives_ok(
 	$$ SELECT * FROM devices_by_id_and_gateway(11678152912333531136::numeric(20, 0), 1157178494608281) $$,

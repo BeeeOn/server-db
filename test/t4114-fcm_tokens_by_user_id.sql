@@ -4,11 +4,14 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query $$ `cat _api/fcm_tokens.fetch.by.user.id.sql`; $$
+
 BEGIN;
 
-SELECT plan(3);
+CREATE OR REPLACE FUNCTION fcm_tokens_by_user_id(uuid)
+RETURNS SETOF beeeon.fcm_tokens AS :query LANGUAGE SQL;
 
-SELECT has_function('fcm_tokens_by_user_id');
+SELECT plan(2);
 
 SELECT is_empty(
 	$$ SELECT * FROM fcm_tokens_by_user_id('8c3e5613-7692-4915-951d-68362505e4ce') $$,

@@ -4,11 +4,14 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query '$$ BEGIN '`cat _api/verified_identities.update.sql`; 'RETURN FOUND; END;' $$
+
 BEGIN;
 
-SELECT plan(2);
+CREATE OR REPLACE FUNCTION verified_identities_update(uuid, varchar, varchar)
+RETURNS boolean AS :query LANGUAGE plpgsql;
 
-SELECT has_function('verified_identities_update');
+SELECT plan(1);
 
 SELECT ok(
 	NOT verified_identities_update('3d865c6e-0408-463e-9ae1-c90a93689a08', 'url-to-picture', 'a-token'),

@@ -4,11 +4,14 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query $$ `cat _api/users.fetch.by.id.sql`; $$
+
 BEGIN;
 
-SELECT plan(2);
+CREATE OR REPLACE FUNCTION users_by_id(uuid)
+RETURNS SETOF beeeon.user AS :query LANGUAGE SQL;
 
-SELECT has_function('users_by_id');
+SELECT plan(1);
 
 SELECT is_empty(
 	$$ SELECT * FROM users_by_id('8c3e5613-7692-4915-951d-68362505e4ce') $$,

@@ -4,14 +4,17 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query `cat _api/roles_in_gateway.remove.all.sql`
+
 BEGIN;
 
-SELECT plan(2);
+PREPARE roles_in_gateway_remove_gateway_all(bigint)
+AS :query;
 
-SELECT has_function('roles_in_gateway_remove_gateway_all');
+SELECT plan(1);
 
 SELECT lives_ok(
-	$$ SELECT roles_in_gateway_remove_gateway_all(1240795450208837) $$,
+	$$ EXECUTE roles_in_gateway_remove_gateway_all(1240795450208837) $$,
 	'removing of non-existing role via a non-existing gateway should not fail'
 );
 

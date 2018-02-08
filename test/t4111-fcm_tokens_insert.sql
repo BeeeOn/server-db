@@ -4,7 +4,7 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
-\set query `cat _api/fcm_tokens.create.sql`
+\set query `cat pgsql/fcm_tokens/create.sql`
 
 BEGIN;
 

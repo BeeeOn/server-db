@@ -4,7 +4,7 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
-\set query `cat _api/gateways_status.insert.sql`
+\set query `cat pgsql/gateways_status/insert.sql`
 
 BEGIN;
 

@@ -4,11 +4,14 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query $$ `cat _api/roles_in_gateway.fetch.by.gateway_id.sql`; $$
+
 BEGIN;
 
-SELECT plan(2);
+CREATE OR REPLACE FUNCTION roles_in_gateway_by_gateway(bigint)
+RETURNS SETOF beeeon.role_in_gateway AS :query LANGUAGE SQL;
 
-SELECT has_function('roles_in_gateway_by_gateway');
+SELECT plan(1);
 
 SELECT is_empty(
 	$$ SELECT * FROM roles_in_gateway_by_gateway(1240795450208837) $$,

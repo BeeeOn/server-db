@@ -4,14 +4,17 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query `cat _api/devices_properties.remove.sql`
+
 BEGIN;
 
-SELECT plan(2);
+PREPARE device_properties_remove(numeric, bigint, smallint)
+AS :query;
 
-SELECT has_function('device_properties_remove');
+SELECT plan(1);
 
 SELECT lives_ok(
-	$$ SELECT device_properties_remove(11678152912333531136, 1240795450208837, 0::smallint) $$,
+	$$ EXECUTE device_properties_remove(11678152912333531136, 1240795450208837, 0::smallint) $$,
 	'removing of non-existing device property should not fail'
 );
 

@@ -4,14 +4,18 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query `cat _api/roles_in_gateway.create.sql`
+
 BEGIN;
 
-SELECT plan(4);
+PREPARE roles_in_gateway_insert(
+	uuid, bigint, uuid, smallint, bigint)
+AS :query;
 
-SELECT has_function('roles_in_gateway_insert');
+SELECT plan(3);
 
 SELECT throws_ok(
-	$$ SELECT roles_in_gateway_insert(
+	$$ EXECUTE roles_in_gateway_insert(
 		'35a6c2ce-27a4-4d24-b787-3d6c8ac0877a',
 		1589057876756829,
 		'18bc8fa5-7606-4964-b3e1-a3aa239b01d3',
@@ -30,7 +34,7 @@ INSERT INTO identities (id, email)
 VALUES ('18bc8fa5-7606-4964-b3e1-a3aa239b01d3', 'example@example.org');
 
 SELECT lives_ok(
-	$$ SELECT roles_in_gateway_insert(
+	$$ EXECUTE roles_in_gateway_insert(
 		'35a6c2ce-27a4-4d24-b787-3d6c8ac0877a',
 		1589057876756829,
 		'18bc8fa5-7606-4964-b3e1-a3aa239b01d3',

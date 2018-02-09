@@ -4,18 +4,21 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query `cat _api/sensors_history.insert.sql`
+
 BEGIN;
 
-SELECT plan(2);
+PREPARE sensor_history_recent_insert
+AS :query;
 
-SELECT has_function('sensor_history_recent_insert');
+SELECT plan(1);
 
 SELECT throws_ok(
-	$$ SELECT sensor_history_recent_insert(
+	$$ EXECUTE sensor_history_recent_insert(
 		1240795450208837,
-		beeeon.to_device_id(11678152912333531136),
+		11678152912333531136::numeric(20, 0),
 		0::smallint,
-		beeeon.as_utc_timestamp(1500471778),
+		1500471778,
 		0
 	) $$,
 	23503,

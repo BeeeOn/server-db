@@ -19,10 +19,19 @@ RETURNS TABLE (at bigint, avg real, min real, max real) AS :query_agg LANGUAGE S
 
 SELECT plan(9);
 
-SELECT has_function('sensor_history_recent_aggregate');
+SELECT is_empty(
+	$$ SELECT * FROM sensor_history_huge_fetch_raw(
+		1240795450208837,
+		11678152912333531136::numeric(20, 0),
+		0::smallint,
+		0::bigint,
+		1500000000::bigint
+	) $$,
+	'there is no sensor history yet'
+);
 
 SELECT is_empty(
-	$$ SELECT * FROM sensor_history_recent_aggregate(
+	$$ SELECT * FROM sensor_history_huge_fetch_agg(
 		1240795450208837,
 		11678152912333531136::numeric(20, 0),
 		0::smallint,

@@ -4,7 +4,7 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
-\set query $$ `cat _api/devices.fetch.from.gateway.sql`; $$
+\set query $$ `cat _api/devices.fetch_from_gateway.sql`; $$
 
 BEGIN;
 

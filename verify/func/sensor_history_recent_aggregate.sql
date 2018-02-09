@@ -2,9 +2,8 @@
 
 BEGIN;
 
-SELECT beeeon.assure_function(
-	'beeeon',
-	'sensor_history_recent_aggregate(bigint, numeric, smallint, bigint, bigint, bigint)'
-);
+SELECT 0 / CASE WHEN COUNT(*) > 0 THEN 0 ELSE 1 END
+	FROM pg_proc JOIN pg_namespace ON pronamespace = pg_namespace.oid
+	WHERE proname = 'sensor_history_recent_aggregate' AND nspname = 'beeeon';
 
 ROLLBACK;

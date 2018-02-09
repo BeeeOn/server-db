@@ -4,14 +4,34 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
+\set query_raw $$ `cat _api/sensors_history.huge_fetch_raw.sql`; $$
+\set query_agg $$ `cat _api/sensors_history.huge_fetch_agg.sql`; $$
+
 BEGIN;
+
+CREATE OR REPLACE FUNCTION sensor_history_huge_fetch_raw(
+		bigint, numeric(20, 0), smallint, bigint, bigint)
+RETURNS TABLE (at bigint, value real) AS :query_raw LANGUAGE SQL;
+
+CREATE OR REPLACE FUNCTION sensor_history_huge_fetch_agg(
+		bigint, numeric(20, 0), smallint, bigint, bigint, bigint)
+RETURNS TABLE (at bigint, avg real, min real, max real) AS :query_agg LANGUAGE SQL;
 
 SELECT plan(9);
 
-SELECT has_function('sensor_history_recent_aggregate');
+SELECT is_empty(
+	$$ SELECT * FROM sensor_history_huge_fetch_raw(
+		1240795450208837,
+		11678152912333531136::numeric(20, 0),
+		0::smallint,
+		0::bigint,
+		1500000000::bigint
+	) $$,
+	'there is no sensor history yet'
+);
 
 SELECT is_empty(
-	$$ SELECT * FROM sensor_history_recent_aggregate(
+	$$ SELECT * FROM sensor_history_huge_fetch_agg(
 		1240795450208837,
 		11678152912333531136::numeric(20, 0),
 		0::smallint,
@@ -102,27 +122,26 @@ VALUES (
 );
 
 SELECT results_eq(
-	$$ SELECT as_utc_timestamp(at), avg, min, max FROM sensor_history_recent_aggregate(
+	$$ SELECT as_utc_timestamp(at), value FROM sensor_history_huge_fetch_raw(
 		1240795450208837::bigint,
 		11678152912333531136::numeric(20, 0),
 		0::smallint,
 		extract(epoch FROM timestamp '2017-7-20 13:00:00')::bigint,
-		extract(epoch FROM timestamp '2017-7-20 13:00:31')::bigint,
-		5
+		extract(epoch FROM timestamp '2017-7-20 13:00:31')::bigint
 	) $$,
 	$$ VALUES
-		(timestamp '2017-7-20 13:00:05', 20::real, 20::real, 20::real),
-		(timestamp '2017-7-20 13:00:10', 21::real, 21::real, 21::real),
-		(timestamp '2017-7-20 13:00:15', 22::real, 22::real, 22::real),
-		(timestamp '2017-7-20 13:00:20', 23::real, 23::real, 23::real),
-		(timestamp '2017-7-20 13:00:25', 24::real, 24::real, 24::real),
-		(timestamp '2017-7-20 13:00:30', 25::real, 25::real, 25::real)
+		(timestamp '2017-7-20 13:00:05', 20::real),
+		(timestamp '2017-7-20 13:00:10', 21::real),
+		(timestamp '2017-7-20 13:00:15', 22::real),
+		(timestamp '2017-7-20 13:00:20', 23::real),
+		(timestamp '2017-7-20 13:00:25', 24::real),
+		(timestamp '2017-7-20 13:00:30', 25::real)
 	$$,
 	'no real aggregation expected, just raw data'
 );
 
 SELECT results_eq(
-	$$ SELECT as_utc_timestamp(at), avg, min, max FROM sensor_history_recent_aggregate(
+	$$ SELECT as_utc_timestamp(at), avg, min, max FROM sensor_history_huge_fetch_agg(
 		1240795450208837::bigint,
 		11678152912333531136::numeric(20, 0),
 		0::smallint,
@@ -142,7 +161,7 @@ SELECT results_eq(
 );
 
 SELECT results_eq(
-	$$ SELECT as_utc_timestamp(at), avg, min, max FROM sensor_history_recent_aggregate(
+	$$ SELECT as_utc_timestamp(at), avg, min, max FROM sensor_history_huge_fetch_agg(
 		1240795450208837::bigint,
 		11678152912333531136::numeric(20, 0),
 		0::smallint,
@@ -160,7 +179,7 @@ SELECT results_eq(
 );
 
 SELECT results_eq(
-	$$ SELECT as_utc_timestamp(at), avg, min, max FROM sensor_history_recent_aggregate(
+	$$ SELECT as_utc_timestamp(at), avg, min, max FROM sensor_history_huge_fetch_agg(
 		1240795450208837::bigint,
 		11678152912333531136::numeric(20, 0),
 		0::smallint,
@@ -222,13 +241,12 @@ WHERE
 SELECT setseed(0);
 
 SELECT results_eq(
-	$$ SELECT as_utc_timestamp(at), avg, min, max FROM sensor_history_recent_aggregate(
+	$$ SELECT as_utc_timestamp(at), value FROM sensor_history_huge_fetch_raw(
 		1416756209079877::bigint,
 		11678152912333531137::numeric(20, 0),
 		0::smallint,
 		extract(epoch FROM timestamp '2017-7-20 13:00:00')::bigint,
-		extract(epoch FROM timestamp '2017-7-20 14:24:00')::bigint,
-		5
+		extract(epoch FROM timestamp '2017-7-20 14:24:00')::bigint
 	) $$,
 	$$
 	-- generate the same random sequence
@@ -240,8 +258,6 @@ SELECT results_eq(
 	)
 	SELECT
 		timestamp '2017-7-20 13:00:00' + ((r.i - 1) * interval '5 seconds'),
-		r.value,
-		r.value,
 		r.value
 		FROM r;
 	$$,
@@ -252,7 +268,7 @@ SELECT results_eq(
 SELECT setseed(0);
 
 SELECT results_eq(
-	$$ SELECT as_utc_timestamp(at), avg, min, max FROM sensor_history_recent_aggregate(
+	$$ SELECT as_utc_timestamp(at), avg, min, max FROM sensor_history_huge_fetch_agg(
 		1416756209079877::bigint,
 		11678152912333531137::numeric(20, 0),
 		0::smallint,

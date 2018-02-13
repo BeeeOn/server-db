@@ -170,3 +170,4 @@ type/identity [type/identity@prealpha] 2018-02-13T11:55:51Z Jan Viktorin <ivikto
 type/verified_identity [type/verified_identity@prealpha] 2018-02-13T12:04:33Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type verified_identity
 type/user [type/user@prealpha] 2018-02-13T12:08:09Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type user
 type/device [type/device@prealpha] 2018-02-13T12:11:00Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type device
+type/device_property [type/device_property@prealpha] 2018-02-13T15:21:50Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type device_property

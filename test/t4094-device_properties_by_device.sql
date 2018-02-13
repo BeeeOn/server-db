@@ -9,7 +9,13 @@ SET search_path TO beeeon, public;
 BEGIN;
 
 CREATE OR REPLACE FUNCTION device_properties_by_device(numeric, bigint)
-RETURNS SETOF beeeon.device_property AS :query LANGUAGE SQL;
+RETURNS TABLE (
+	device_id varchar,
+	gateway_id bigint,
+	key smallint,
+	value text,
+	params text
+) AS :query LANGUAGE SQL;
 
 SELECT plan(1);
 

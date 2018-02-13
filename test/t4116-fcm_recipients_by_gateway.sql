@@ -9,7 +9,13 @@ SET search_path TO beeeon, public;
 BEGIN;
 
 CREATE OR REPLACE FUNCTION fcm_recipients_by_gateway(bigint)
-RETURNS SETOF beeeon.fcm_token AS :query LANGUAGE SQL;
+RETURNS TABLE (
+	token varchar(250),
+	user_id uuid,
+	user_first_name varchar(250),
+	user_last_name varchar(250),
+	user_locale varchar(32)
+) AS :query LANGUAGE SQL;
 
 SELECT plan(4);
 

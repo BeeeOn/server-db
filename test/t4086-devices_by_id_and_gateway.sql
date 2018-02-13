@@ -9,7 +9,19 @@ SET search_path TO beeeon, public;
 BEGIN;
 
 CREATE OR REPLACE FUNCTION devices_by_id_and_gateway(numeric(20, 0), bigint)
-RETURNS SETOF beeeon.device AS :query LANGUAGE SQL;
+RETURNS TABLE (
+	id varchar,
+	gateway_id bigint,
+	location_id uuid,
+	name varchar(250),
+	type smallint,
+	refresh integer,
+	battery smallint,
+	signal smallint,
+	first_seen bigint,
+	last_seen bigint,
+	active_since bigint
+) AS :query LANGUAGE SQL;
 
 SELECT plan(1);
 

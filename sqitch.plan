@@ -163,3 +163,16 @@ as_utc_timestamp_us [as_utc_timestamp_us@prealpha] 2018-02-09T16:42:09Z Jan Vikt
 func/sensor_history_recent_insert [func/sensor_history_recent_insert@prealpha] 2018-02-08T16:07:00Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function sensor_history_recent_insert
 func/sensor_history_last_value [func/sensor_history_last_value@prealpha] 2018-02-08T16:54:06Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function sensor_history_last_value
 func/sensor_history_recent_aggregate [func/sensor_history_recent_aggregate@prealpha] 2018-02-09T10:01:40Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function sensor_history_recent_aggregate
+type/gateway_with_status [type/gateway_with_status@prealpha] 2018-02-13T11:25:53Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type gateway_with_status
+type/legacy_gateway [type/legacy_gateway@prealpha] 2018-02-13T11:44:29Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type legacy_gateway
+type/location [type/location@prealpha] 2018-02-13T11:48:39Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type legacy_gateway
+type/identity [type/identity@prealpha] 2018-02-13T11:55:51Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type identity
+type/verified_identity [type/verified_identity@prealpha] 2018-02-13T12:04:33Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type verified_identity
+type/user [type/user@prealpha] 2018-02-13T12:08:09Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type user
+type/device [type/device@prealpha] 2018-02-13T12:11:00Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type device
+type/device_property [type/device_property@prealpha] 2018-02-13T15:21:50Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type device_property
+type/role_in_gateway [type/role_in_gateway@prealpha] 2018-02-13T15:36:36Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type role_in_gateway
+type/sensor_value [type/sensor_value@prealpha] 2018-02-13T16:00:22Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type sensor_value
+type/control_stability [type/control_stability@prealpha] 2018-02-13T16:04:09Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type control_stability
+type/control_recent [type/control_recent@prealpha] 2018-02-13T16:08:35Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type control_recent
+type/fcm_token [type/fcm_token@prealpha] 2018-02-13T16:12:02Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type fcm_token

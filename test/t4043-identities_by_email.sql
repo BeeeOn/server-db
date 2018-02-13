@@ -9,7 +9,10 @@ SET search_path TO beeeon, public;
 BEGIN;
 
 CREATE OR REPLACE FUNCTION identities_by_email(varchar)
-RETURNS SETOF beeeon.identity AS :query LANGUAGE SQL;
+RETURNS TABLE (
+	id uuid,
+	email varchar(250)
+) AS :query LANGUAGE SQL;
 
 SELECT plan(1);
 

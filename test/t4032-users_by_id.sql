@@ -9,7 +9,12 @@ SET search_path TO beeeon, public;
 BEGIN;
 
 CREATE OR REPLACE FUNCTION users_by_id(uuid)
-RETURNS SETOF beeeon.user AS :query LANGUAGE SQL;
+RETURNS TABLE (
+	id uuid,
+	first_name varchar(250),
+	last_name varchar(250),
+	locale varchar(32)
+) AS :query LANGUAGE SQL;
 
 SELECT plan(1);
 

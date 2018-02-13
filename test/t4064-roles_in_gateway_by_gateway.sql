@@ -9,7 +9,14 @@ SET search_path TO beeeon, public;
 BEGIN;
 
 CREATE OR REPLACE FUNCTION roles_in_gateway_by_gateway(bigint)
-RETURNS SETOF beeeon.role_in_gateway AS :query LANGUAGE SQL;
+RETURNS TABLE (
+	id uuid,
+	gateway_id bigint,
+	identity_id uuid,
+	level smallint,
+	created bigint,
+	identity_email varchar(250)
+) AS :query LANGUAGE SQL;
 
 SELECT plan(1);
 

@@ -2,29 +2,23 @@
 
 BEGIN;
 
-SELECT beeeon.assure_type(
-	'beeeon',
-	'control_stability'
-);
+SELECT 1 / CASE WHEN COUNT(*) > 0 THEN 0 ELSE 1 END
+	FROM pg_catalog.pg_type t
+	JOIN pg_catalog.pg_namespace n ON t.typnamespace = n.oid
+	WHERE t.typisdefined
+		AND n.nspname = 'beeeon'
+		AND t.typname = 'control_stability';
 
-SELECT beeeon.assure_function(
-	'beeeon',
-	'to_control_stability(smallint)'
-);
+SELECT 0 / CASE WHEN COUNT(*) > 0 THEN 0 ELSE 1 END
+	FROM pg_proc JOIN pg_namespace ON pronamespace = pg_namespace.oid
+	WHERE proname = 'to_control_stability' AND nspname = 'beeeon';
 
-SELECT beeeon.assure_function(
-	'beeeon',
-	'to_control_stability(integer)'
-);
+SELECT 0 / CASE WHEN COUNT(*) > 0 THEN 0 ELSE 1 END
+	FROM pg_proc JOIN pg_namespace ON pronamespace = pg_namespace.oid
+	WHERE proname = 'from_control_stability' AND nspname = 'beeeon';
 
-SELECT beeeon.assure_function(
-	'beeeon',
-	'from_control_stability(beeeon.control_stability)'
-);
-
-SELECT beeeon.assure_function(
-	'beeeon',
-	'control_stability_is_confirmed(beeeon.control_stability)'
-);
+SELECT 0 / CASE WHEN COUNT(*) > 0 THEN 0 ELSE 1 END
+	FROM pg_proc JOIN pg_namespace ON pronamespace = pg_namespace.oid
+	WHERE proname = 'control_stability_is_confirmed' AND nspname = 'beeeon';
 
 ROLLBACK;

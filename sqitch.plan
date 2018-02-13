@@ -163,3 +163,4 @@ as_utc_timestamp_us [as_utc_timestamp_us@prealpha] 2018-02-09T16:42:09Z Jan Vikt
 func/sensor_history_recent_insert [func/sensor_history_recent_insert@prealpha] 2018-02-08T16:07:00Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function sensor_history_recent_insert
 func/sensor_history_last_value [func/sensor_history_last_value@prealpha] 2018-02-08T16:54:06Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function sensor_history_last_value
 func/sensor_history_recent_aggregate [func/sensor_history_recent_aggregate@prealpha] 2018-02-09T10:01:40Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove function sensor_history_recent_aggregate
+type/gateway_with_status [type/gateway_with_status@prealpha] 2018-02-13T11:25:53Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type gateway_with_status

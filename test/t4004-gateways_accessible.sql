@@ -9,7 +9,17 @@ SET search_path TO beeeon, public;
 BEGIN;
 
 CREATE OR REPLACE FUNCTION gateways_accessible(uuid)
-RETURNS SETOF beeeon.gateway_with_status AS :query LANGUAGE SQL;
+RETURNS TABLE (
+	id bigint,
+	name varchar(250),
+	altitude integer,
+	latitude double precision,
+	longitude double precision,
+	timezone varchar(64),
+	last_changed bigint,
+	version varchar(40),
+	ip varchar(45)
+) AS :query LANGUAGE SQL;
 
 SELECT plan(3);
 

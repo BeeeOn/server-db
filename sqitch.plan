@@ -166,3 +166,4 @@ func/sensor_history_recent_aggregate [func/sensor_history_recent_aggregate@preal
 type/gateway_with_status [type/gateway_with_status@prealpha] 2018-02-13T11:25:53Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type gateway_with_status
 type/legacy_gateway [type/legacy_gateway@prealpha] 2018-02-13T11:44:29Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type legacy_gateway
 type/location [type/location@prealpha] 2018-02-13T11:48:39Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type legacy_gateway
+type/identity [type/identity@prealpha] 2018-02-13T11:55:51Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type identity

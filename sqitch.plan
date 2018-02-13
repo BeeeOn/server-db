@@ -175,3 +175,4 @@ type/role_in_gateway [type/role_in_gateway@prealpha] 2018-02-13T15:36:36Z Jan Vi
 type/sensor_value [type/sensor_value@prealpha] 2018-02-13T16:00:22Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type sensor_value
 type/control_stability [type/control_stability@prealpha] 2018-02-13T16:04:09Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type control_stability
 type/control_recent [type/control_recent@prealpha] 2018-02-13T16:08:35Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type control_recent
+type/fcm_token [type/fcm_token@prealpha] 2018-02-13T16:12:02Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type fcm_token

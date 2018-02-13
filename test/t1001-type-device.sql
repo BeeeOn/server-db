@@ -6,9 +6,8 @@ SET search_path TO beeeon, public;
 
 BEGIN;
 
-SELECT plan(20);
+SELECT plan(19);
 
-SELECT has_type('device');
 SELECT has_function('to_device_id');
 SELECT has_function('from_device_id');
 

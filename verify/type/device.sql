@@ -2,10 +2,11 @@
 
 BEGIN;
 
-SELECT beeeon.assure_type('beeeon', 'device');
-SELECT beeeon.assure_function('beeeon', 'to_device_id(numeric)');
-SELECT beeeon.assure_function('beeeon', 'to_device_id(varchar)');
-SELECT beeeon.assure_function('beeeon', 'to_device_id(bigint)');
-SELECT beeeon.assure_function('beeeon', 'from_device_id(bigint)');
+SELECT 1 / CASE WHEN COUNT(*) > 0 THEN 0 ELSE 1 END
+	FROM pg_catalog.pg_type t
+	JOIN pg_catalog.pg_namespace n ON t.typnamespace = n.oid
+	WHERE t.typisdefined
+		AND n.nspname = 'beeeon'
+		AND t.typname = 'device';
 
 ROLLBACK;

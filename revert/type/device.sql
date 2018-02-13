@@ -2,10 +2,18 @@
 
 BEGIN;
 
-DROP FUNCTION beeeon.from_device_id(bigint);
-DROP FUNCTION beeeon.to_device_id(bigint);
-DROP FUNCTION beeeon.to_device_id(varchar);
-DROP FUNCTION beeeon.to_device_id(numeric);
-DROP TYPE beeeon.device;
+CREATE TYPE beeeon.device AS (
+	id varchar,
+	gateway_id bigint,
+	location_id uuid,
+	name varchar(250),
+	type smallint,
+	refresh integer,
+	battery smallint,
+	signal smallint,
+	first_seen bigint,
+	last_seen bigint,
+	active_since bigint
+);
 
 COMMIT;

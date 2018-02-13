@@ -167,3 +167,4 @@ type/gateway_with_status [type/gateway_with_status@prealpha] 2018-02-13T11:25:53
 type/legacy_gateway [type/legacy_gateway@prealpha] 2018-02-13T11:44:29Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type legacy_gateway
 type/location [type/location@prealpha] 2018-02-13T11:48:39Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type legacy_gateway
 type/identity [type/identity@prealpha] 2018-02-13T11:55:51Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type identity
+type/verified_identity [type/verified_identity@prealpha] 2018-02-13T12:04:33Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type verified_identity

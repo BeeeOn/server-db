@@ -9,7 +9,11 @@ SET search_path TO beeeon, public;
 BEGIN;
 
 CREATE OR REPLACE FUNCTION locations_by_gateway(bigint)
-RETURNS SETOF beeeon.location AS :query LANGUAGE SQL;
+RETURNS TABLE (
+	id uuid,
+	name varchar(250),
+	gateway_id bigint
+) AS :query LANGUAGE SQL;
 
 SELECT plan(1);
 

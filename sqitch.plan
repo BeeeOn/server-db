@@ -174,3 +174,4 @@ type/device_property [type/device_property@prealpha] 2018-02-13T15:21:50Z Jan Vi
 type/role_in_gateway [type/role_in_gateway@prealpha] 2018-02-13T15:36:36Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type role_in_gateway
 type/sensor_value [type/sensor_value@prealpha] 2018-02-13T16:00:22Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type sensor_value
 type/control_stability [type/control_stability@prealpha] 2018-02-13T16:04:09Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type control_stability
+type/control_recent [type/control_recent@prealpha] 2018-02-13T16:08:35Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type control_recent

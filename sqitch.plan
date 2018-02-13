@@ -3,16 +3,7 @@
 %uri=https://github.com/BeeeOn/server
 
 schema-beeeon 2017-07-09T17:23:34Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new scheme
-type/gateway_with_status [schema-beeeon] 2017-07-11T14:00:09Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type gateways_with_status
-type/legacy_gateway [schema-beeeon] 2017-07-13T13:36:45Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type legacy_gateway
-type/location [schema-beeeon] 2017-07-14T15:28:29Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type location
-type/identity [schema-beeeon] 2017-07-14T13:40:13Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type identity
-type/verified_identity [schema-beeeon] 2017-07-11T13:33:40Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type verified_identity
-type/user [schema-beeeon] 2017-07-11T14:21:31Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type user
 type/device [schema-beeeon] 2017-07-11T14:23:06Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type device
-type/device_property [schema-beeeon] 2017-07-14T12:15:52Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type device_property
-type/role_in_gateway [schema-beeeon] 2017-07-11T16:07:05Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type role_in_gateway
-type/sensor_value [schema-beeeon] 2017-07-17T14:54:35Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type sensor_value
 table/gateways [schema-beeeon] 2017-07-09T17:28:13Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table gateways
 table/gateways_status [table/gateways schema-beeeon] 2017-07-09T17:38:26Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table gateways_status
 table/locations [schema-beeeon table/gateways] 2017-07-09T17:45:03Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table locations
@@ -22,18 +13,14 @@ table/verified_identities [schema-beeeon table/users table/identities] 2017-07-0
 table/devices [schema-beeeon table/gateways table/locations] 2017-07-09T18:01:50Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table devices
 table/device_properties [schema-beeeon table/devices table/gateways] 2017-07-09T18:14:48Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table device_properties
 table/roles_in_gateway [schema-beeeon table/gateways table/identities] 2017-07-09T21:28:17Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table roles_in_gateway
-table/sensor_history_recent [schema-beeeon table/devices table/gateways type/sensor_value] 2017-07-17T15:12:30Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table sensor_history_recent
+table/sensor_history_recent [schema-beeeon table/devices table/gateways] 2017-07-17T15:12:30Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table sensor_history_recent
 view/users_of_gateway [schema-beeeon table/gateways table/roles_in_gateway table/verified_identities] 2017-07-09T21:57:43Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new view users_of_gateway
 view/legacy_gateways [schema-beeeon table/gateways table/roles_in_gateway table/devices table/verified_identities] 2017-07-09T22:29:48Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new view legacy_gateways
 func/gateways_status_most_recent [schema-beeeon table/gateways_status] 2017-07-09T23:52:28Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement gateways_status_most_recent
 table/fcm_tokens [schema-beeeon table/users] 2017-08-28T13:39:38Z Peter Kubov <xkubov06@stud.fit.vutbr.cz> # beeeon: new table fcm_tokens
-type/control_stability [schema-beeeon] 2017-09-26T09:17:44Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type control_stability
-type/control_recent [schema-beeeon] 2017-09-26T14:43:19Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type control_recent
-table/controls_recent [schema-beeeon type/control_stability table/gateways table/devices] 2017-10-03T13:59:59Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table controls_recent
-type/fcm_token [schema-beeeon] 2017-09-26T14:39:25Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type fcm_token
 as_utc_timestamp_us [schema-beeeon] 2017-12-06T15:30:47Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: modify introduce function as_utc_timestamp_us()
 table/sensor_history_last [schema-beeeon table/devices table/gateways table/sensor_history_recent] 2017-07-17T15:12:30Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new materialized view sensor_history_last
 table/controls_fsm [schema-beeeon table/devices table/gateways table/sensor_history_recent] 2018-01-15T13:14:21Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table controls_fsm
 @prealpha 2018-01-22T13:47:21Z Jan Viktorin <iviktorin@fit.vutbr.cz> # Experimental database schema, not recommended for production
-table/controls_recent [table/controls_recent@prealpha] 2018-01-22T13:57:03Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: drop table controls_recent
 as_utc_timestamp_us [as_utc_timestamp_us@prealpha] 2018-02-09T16:42:09Z Jan Viktorin <iviktorin@fit.vutbr.cz> # fix as_utc_timestamp_us to work with pgsql older than 9.4
+type/device [type/device@prealpha] 2018-02-13T12:11:00Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type device

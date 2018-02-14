@@ -17,3 +17,4 @@ beeeon.sensor_history_recent/create 2018-02-14T20:30:19Z Jan Viktorin <iviktorin
 beeeon.sensor_history_last/create 2018-02-14T20:33:04Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.sensor_history_last: create new materialized view
 beeeon.controls_fsm/create 2018-02-14T20:39:05Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.controls_fsm: create new table
 beeeon.controls_fsm_last/create 2018-02-14T20:52:59Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.controls_fsm_last: create new materialized view
+beeeon.fcm_tokens/create 2018-02-14T21:11:34Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.fcm_tokens: create new table

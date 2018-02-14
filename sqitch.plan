@@ -15,3 +15,4 @@ beeeon.device_properties/create 2018-02-14T20:14:25Z Jan Viktorin <iviktorin@fit
 beeeon.roles_in_gateway/create 2018-02-14T20:27:11Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.roles_in_gateway: create new table
 beeeon.sensor_history_recent/create 2018-02-14T20:30:19Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.sensor_history_recent: create new table
 beeeon.sensor_history_last/create 2018-02-14T20:33:04Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.sensor_history_last: create new materialized view
+beeeon.controls_fsm/create 2018-02-14T20:39:05Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.controls_fsm: create new table

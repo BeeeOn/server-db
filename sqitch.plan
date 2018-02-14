@@ -2,25 +2,24 @@
 %project=beeeon-server
 %uri=https://github.com/BeeeOn/server
 
-schema-beeeon 2017-07-09T17:23:34Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new scheme
-type/device [schema-beeeon] 2017-07-11T14:23:06Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new type device
-table/gateways [schema-beeeon] 2017-07-09T17:28:13Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table gateways
-table/gateways_status [table/gateways schema-beeeon] 2017-07-09T17:38:26Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table gateways_status
-table/locations [schema-beeeon table/gateways] 2017-07-09T17:45:03Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table locations
-table/users [schema-beeeon] 2017-07-09T17:48:33Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table users
-table/identities [schema-beeeon] 2017-07-09T17:52:38Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table identities
-table/verified_identities [schema-beeeon table/users table/identities] 2017-07-09T18:23:43Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table verified_identities
-table/devices [schema-beeeon table/gateways table/locations] 2017-07-09T18:01:50Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table devices
-table/device_properties [schema-beeeon table/devices table/gateways] 2017-07-09T18:14:48Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table device_properties
-table/roles_in_gateway [schema-beeeon table/gateways table/identities] 2017-07-09T21:28:17Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table roles_in_gateway
-table/sensor_history_recent [schema-beeeon table/devices table/gateways] 2017-07-17T15:12:30Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table sensor_history_recent
-view/users_of_gateway [schema-beeeon table/gateways table/roles_in_gateway table/verified_identities] 2017-07-09T21:57:43Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new view users_of_gateway
-view/legacy_gateways [schema-beeeon table/gateways table/roles_in_gateway table/devices table/verified_identities] 2017-07-09T22:29:48Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new view legacy_gateways
-func/gateways_status_most_recent [schema-beeeon table/gateways_status] 2017-07-09T23:52:28Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: implement gateways_status_most_recent
-table/fcm_tokens [schema-beeeon table/users] 2017-08-28T13:39:38Z Peter Kubov <xkubov06@stud.fit.vutbr.cz> # beeeon: new table fcm_tokens
-as_utc_timestamp_us [schema-beeeon] 2017-12-06T15:30:47Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: modify introduce function as_utc_timestamp_us()
-table/sensor_history_last [schema-beeeon table/devices table/gateways table/sensor_history_recent] 2017-07-17T15:12:30Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new materialized view sensor_history_last
-table/controls_fsm [schema-beeeon table/devices table/gateways table/sensor_history_recent] 2018-01-15T13:14:21Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: new table controls_fsm
-@prealpha 2018-01-22T13:47:21Z Jan Viktorin <iviktorin@fit.vutbr.cz> # Experimental database schema, not recommended for production
-as_utc_timestamp_us [as_utc_timestamp_us@prealpha] 2018-02-09T16:42:09Z Jan Viktorin <iviktorin@fit.vutbr.cz> # fix as_utc_timestamp_us to work with pgsql older than 9.4
-type/device [type/device@prealpha] 2018-02-13T12:11:00Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: remove type device
+beeeon/create 2018-02-01T18:28:40Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: create new schema
+beeeon.functions/create_utilities 2018-02-14T22:33:51Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.functions: create utilities
+beeeon.gateways/create 2018-02-01T18:27:04Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.gateways: create new table
+beeeon.gateways_status/create 2018-02-01T18:36:30Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.gateways_status: create new table
+beeeon.locations/create 2018-02-01T18:41:24Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.locations: create new table
+beeeon.devices/create 2018-02-01T18:34:28Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.devices: create new table
+beeeon.users/create 2018-02-01T18:42:25Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.users: create new table
+beeeon.identities/create 2018-02-01T18:44:24Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.identities: create new table
+beeeon.verified_identities/create 2018-02-01T18:45:09Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.verified_identities: create new table
+beeeon.device_properties/create 2018-02-14T20:14:25Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.device_properties: create new table
+beeeon.roles_in_gateway/create 2018-02-14T20:27:11Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.roles_in_gateway: create new table
+beeeon.sensor_history_recent/create 2018-02-14T20:30:19Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.sensor_history_recent: create new table
+beeeon.sensor_history_last/create 2018-02-14T20:33:04Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.sensor_history_last: create new materialized view
+beeeon.controls_fsm/create 2018-02-14T20:39:05Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.controls_fsm: create new table
+beeeon.controls_fsm_last/create 2018-02-14T20:52:59Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.controls_fsm_last: create new materialized view
+beeeon.fcm_tokens/create 2018-02-14T21:11:34Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.fcm_tokens: create new table
+beeeon.users_of_gateway/create 2018-02-14T21:05:48Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.users_of_gateway: create new view
+beeeon.legacy_gateways/create 2018-02-14T21:13:59Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.legacy_gateways: create new view
+beeeon.functions/create_as_utc_timestamp 2018-02-14T22:39:26Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.functions: create as_utc_timestamp
+beeeon.functions/create_gateways_status_most_recent 2018-02-14T22:29:49Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.functions: create gateways_status_most_recent
+beeeon.functions/create_device_id_utilities 2018-02-14T22:49:57Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.functions: create device_id utilities

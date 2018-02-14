@@ -3,3 +3,4 @@
 %uri=https://github.com/BeeeOn/server
 
 beeeon/create 2018-02-01T18:28:40Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon: create new schema
+beeeon.functions/create_utilities 2018-02-14T22:33:51Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.functions: create utilities

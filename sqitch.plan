@@ -22,3 +22,4 @@ beeeon.users_of_gateway/create 2018-02-14T21:05:48Z Jan Viktorin <iviktorin@fit.
 beeeon.legacy_gateways/create 2018-02-14T21:13:59Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.legacy_gateways: create new view
 beeeon.functions/create_as_utc_timestamp 2018-02-14T22:39:26Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.functions: create as_utc_timestamp
 beeeon.functions/create_gateways_status_most_recent 2018-02-14T22:29:49Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.functions: create gateways_status_most_recent
+beeeon.functions/create_device_id_utilities 2018-02-14T22:49:57Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.functions: create device_id utilities

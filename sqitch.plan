@@ -11,3 +11,4 @@ beeeon.devices/create 2018-02-01T18:34:28Z Jan Viktorin <iviktorin@fit.vutbr.cz>
 beeeon.users/create 2018-02-01T18:42:25Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.users: create new table
 beeeon.identities/create 2018-02-01T18:44:24Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.identities: create new table
 beeeon.verified_identities/create 2018-02-01T18:45:09Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.verified_identities: create new table
+beeeon.device_properties/create 2018-02-14T20:14:25Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.device_properties: create new table

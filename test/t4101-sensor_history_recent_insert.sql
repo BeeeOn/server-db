@@ -11,7 +11,7 @@ BEGIN;
 PREPARE sensor_history_recent_insert
 AS :query;
 
-SELECT plan(6);
+SELECT plan(7);
 
 SELECT throws_ok(
 	$$ EXECUTE sensor_history_recent_insert(
@@ -107,6 +107,19 @@ SELECT throws_ok(
 	23505,
 	NULL,
 	'constraint violation for duplicate timestamp should be raised'
+);
+
+SELECT results_eq(
+	$$ SELECT value, at FROM beeeon.sensor_history_last ORDER BY module_id, at $$,
+	$$ VALUES (
+		15::real,
+		timestamp '2017-07-19 13:42:58.000001'
+	),
+	(
+		17::real,
+		timestamp '2017-07-19 13:42:58.000000'
+	) $$,
+	'2 modules with the most recent values should be in materialized view only'
 );
 
 SELECT finish();

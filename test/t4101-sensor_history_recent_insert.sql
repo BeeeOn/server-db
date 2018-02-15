@@ -11,7 +11,7 @@ BEGIN;
 PREPARE sensor_history_recent_insert
 AS :query;
 
-SELECT plan(5);
+SELECT plan(6);
 
 SELECT throws_ok(
 	$$ EXECUTE sensor_history_recent_insert(
@@ -94,6 +94,19 @@ SELECT results_eq(
 		timestamp '2017-07-19 13:42:58.000000'
 	) $$,
 	'2 values should have been inserted'
+);
+
+SELECT throws_ok(
+	$$ EXECUTE sensor_history_recent_insert(
+		1240795450208837,
+		11678152912333531136::numeric(20, 0),
+		1::smallint,
+		1500471778000000,
+		16
+	) $$,
+	23505,
+	NULL,
+	'constraint violation for duplicate timestamp should be raised'
 );
 
 SELECT finish();

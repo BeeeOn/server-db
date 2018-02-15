@@ -11,7 +11,7 @@ BEGIN;
 PREPARE sensor_history_recent_insert
 AS :query;
 
-SELECT plan(7);
+SELECT plan(10);
 
 SELECT throws_ok(
 	$$ EXECUTE sensor_history_recent_insert(
@@ -120,6 +120,51 @@ SELECT results_eq(
 		timestamp '2017-07-19 13:42:58.000000'
 	) $$,
 	'2 modules with the most recent values should be in materialized view only'
+);
+
+SELECT lives_ok(
+	$$ EXECUTE sensor_history_recent_insert(
+		1240795450208837,
+		11678152912333531136::numeric(20, 0),
+		1::smallint,
+		1500471777999999,
+		11
+	) $$,
+	'inserting older (out-of-order) data should work'
+);
+
+SELECT results_eq(
+	$$ SELECT value, at FROM beeeon.sensor_history_recent ORDER BY module_id, at $$,
+	$$ VALUES (
+		26::real,
+		timestamp '2017-07-19 13:42:58.000000'
+	),
+	(
+		15::real,
+		timestamp '2017-07-19 13:42:58.000001'
+	),
+	(
+		11::real,
+		timestamp '2017-07-19 13:42:57.999999'
+	),
+	(
+		17::real,
+		timestamp '2017-07-19 13:42:58.000000'
+	) $$,
+	'out-of-order data should be inserted successfully'
+);
+
+SELECT results_eq(
+	$$ SELECT value, at FROM beeeon.sensor_history_last ORDER BY module_id, at $$,
+	$$ VALUES (
+		15::real,
+		timestamp '2017-07-19 13:42:58.000001'
+	),
+	(
+		17::real,
+		timestamp '2017-07-19 13:42:58.000000'
+	) $$,
+	'out-of-order data should not modify materialized view'
 );
 
 SELECT finish();

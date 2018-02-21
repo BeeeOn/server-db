@@ -18,7 +18,8 @@ RETURNS TABLE (
 	access_token varchar(250),
 	identity_email varchar(250),
 	user_first_name varchar(250),
-	user_last_name varchar(250)
+	user_last_name varchar(250),
+	user_locale varchar(32)
 ) AS :query LANGUAGE SQL;
 
 SELECT plan(3);

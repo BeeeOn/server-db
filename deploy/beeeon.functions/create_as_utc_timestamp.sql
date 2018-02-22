@@ -8,7 +8,7 @@ $$
 BEGIN
 	RETURN to_timestamp(unix) AT TIME ZONE 'UTC';
 END;
-$$ LANGUAGE plpgsql;
+$$ IMMUTABLE LANGUAGE plpgsql;
 
 CREATE OR REPLACE FUNCTION beeeon.as_utc_timestamp_us(unix bigint)
 RETURNS TIMESTAMP AS
@@ -22,6 +22,6 @@ BEGIN
 	RETURN beeeon.as_utc_timestamp(unix / 1000000)
 		+ us * interval '1 microseconds';
 END;
-$$ LANGUAGE plpgsql;
+$$ IMMUTABLE LANGUAGE plpgsql;
 
 COMMIT;

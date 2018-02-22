@@ -20,7 +20,7 @@ BEGIN
 		RETURN (num - 18446744073709551616)::bigint;
 	END IF;
 END;
-$$ LANGUAGE plpgsql;
+$$ IMMUTABLE LANGUAGE plpgsql;
 
 CREATE OR REPLACE FUNCTION beeeon.to_device_id(num varchar(20))
 RETURNS bigint AS
@@ -31,7 +31,7 @@ BEGIN
 	tmp := to_number(num, '99999999999999999999');
 	RETURN beeeon.to_device_id(tmp);
 END;
-$$ LANGUAGE plpgsql;
+$$ IMMUTABLE LANGUAGE plpgsql;
 
 CREATE OR REPLACE FUNCTION beeeon.to_device_id(num bigint)
 RETURNS bigint AS
@@ -39,7 +39,7 @@ $$
 BEGIN
 	RETURN num;
 END;
-$$ LANGUAGE plpgsql;
+$$ IMMUTABLE LANGUAGE plpgsql;
 
 ---
 -- Convert a number to device ID as represented in the type device.
@@ -59,6 +59,6 @@ BEGIN
 		RETURN to_char(id::numeric, 'FM99999999999999999999');
 	END IF;
 END;
-$$ LANGUAGE plpgsql;
+$$ IMMUTABLE LANGUAGE plpgsql;
 
 COMMIT;

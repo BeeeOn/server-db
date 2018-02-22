@@ -23,6 +23,6 @@ BEGIN
 
 	RETURN last_at;
 END;
-$$ LANGUAGE plpgsql;
+$$ STABLE LANGUAGE plpgsql;
 
 COMMIT;

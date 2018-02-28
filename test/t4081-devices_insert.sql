@@ -4,7 +4,7 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
-\set query `cat _api/devices.create.sql`
+\set query `cat pgsql/devices/create.sql`
 
 BEGIN;
 

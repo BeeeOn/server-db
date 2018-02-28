@@ -11,7 +11,7 @@ BEGIN;
 PREPARE sensor_history_recent_insert
 AS :query;
 
-SELECT plan(10);
+SELECT plan(11);
 
 SELECT throws_ok(
 	$$ EXECUTE sensor_history_recent_insert(
@@ -165,6 +165,19 @@ SELECT results_eq(
 		timestamp '2017-07-19 13:42:58.000000'
 	) $$,
 	'out-of-order data should not modify materialized view'
+);
+
+SELECT throws_ok(
+	$$ EXECUTE sensor_history_recent_insert(
+		1240795450208837,
+		11678152912333531136::numeric(20, 0),
+		1::smallint,
+		1500471779124324,
+		'NaN'::real
+	) $$,
+	23514,
+	NULL,
+	'constraint violation for NaN value'
 );
 
 SELECT finish();

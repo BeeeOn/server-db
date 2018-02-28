@@ -4,7 +4,7 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
-\set query $$ `cat _api/legacy_gateways.fetch_accessible.sql`; $$
+\set query $$ `cat pgsql/legacy_gateways/fetch_accessible.sql`; $$
 
 BEGIN;
 

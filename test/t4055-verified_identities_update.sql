@@ -4,7 +4,7 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
-\set query '$$ BEGIN '`cat _api/verified_identities.update.sql`; 'RETURN FOUND; END;' $$
+\set query '$$ BEGIN '`cat pgsql/verified_identities/update.sql`; 'RETURN FOUND; END;' $$
 
 BEGIN;
 

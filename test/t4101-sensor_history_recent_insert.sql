@@ -4,7 +4,7 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
-\set query `cat _api/sensors_history.insert.sql`
+\set query `cat pgsql/sensors_history/insert.sql`
 
 BEGIN;
 

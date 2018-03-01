@@ -4,8 +4,8 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
-\set query_raw $$ `cat _api/sensors_history.huge_fetch_raw.sql`; $$
-\set query_agg $$ `cat _api/sensors_history.huge_fetch_agg.sql`; $$
+\set query_raw $$ `cat pgsql/sensors_history/huge_fetch_raw.sql`; $$
+\set query_agg $$ `cat pgsql/sensors_history/huge_fetch_agg.sql`; $$
 
 BEGIN;
 

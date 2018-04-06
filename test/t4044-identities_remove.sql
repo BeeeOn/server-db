@@ -4,7 +4,7 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
-\set query '$$ BEGIN '`cat _api/identities.remove.sql`; 'RETURN FOUND; END;' $$
+\set query '$$ BEGIN '`cat pgsql/identities/remove.sql`; 'RETURN FOUND; END;' $$
 
 BEGIN;
 

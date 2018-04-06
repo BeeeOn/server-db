@@ -4,8 +4,8 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
-\set query_identity '$$ '`cat _api/roles_in_gateway.can_see_identity.sql`' $$'
-\set query_verified_identity '$$ '`cat _api/roles_in_gateway.can_see_verified_identity.sql`' $$'
+\set query_identity '$$ '`cat pgsql/roles_in_gateway/can_see_identity.sql`' $$'
+\set query_verified_identity '$$ '`cat pgsql/roles_in_gateway/can_see_verified_identity.sql`' $$'
 
 BEGIN;
 

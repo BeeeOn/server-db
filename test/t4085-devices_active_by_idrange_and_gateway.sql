@@ -4,7 +4,7 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
-\set query $$ `cat _api/devices.fetch_active_by_gateway_with_prefix.sql`; $$
+\set query $$ `cat pgsql/devices/fetch_active_by_gateway_with_prefix.sql`; $$
 
 BEGIN;
 

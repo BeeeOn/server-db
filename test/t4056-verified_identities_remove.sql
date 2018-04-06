@@ -4,7 +4,7 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
-\set query `cat _api/verified_identities.remove.sql`
+\set query `cat pgsql/verified_identities/remove.sql`
 
 BEGIN;
 

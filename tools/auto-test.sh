@@ -42,23 +42,6 @@ auto_revert()
 		|| kill_and_die ${1} "sqitch failed to revert"
 }
 
-# Generate 1 API call per file into directory _api.
-prepare_apicalls()
-{
-	rm -rf _api
-	mkdir _api
-
-	awk '
-		/^[ \t]*$/ {}
-		/^\[/ {}
-		/[^=]+=.+$/ {
-			split($0, parts, /[ \t]*=[ \t]*/)
-			sub(/^[^=]+=[ \t]*/, "", $0)
-			print "generating " parts[1] > "/dev/stderr"
-			print $0 > "_api/" parts[1] ".sql"
-		}' server-queries.ini
-}
-
 # Parse output from the postgresql.py script providing information
 # about the running database and pid of the running script. The pid
 # is useful to make sure that the PostgreSQL instance is terminated
@@ -76,8 +59,6 @@ auto_test_run()
 	read -r db_user || die "no database user"
 	read -r db_name || die "no database name"
 	read -r pid || die "no pid received"
-
-	prepare_apicalls
 
 	auto_deploy ${pid}
 	auto_prove ${pid} ${db_host} ${db_port} ${db_user} ${db_name}

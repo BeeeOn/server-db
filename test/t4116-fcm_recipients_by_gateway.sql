@@ -4,7 +4,7 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
-\set query $$ `cat _api/fcm_recipients.by_gateway.sql`; $$
+\set query $$ `cat pgsql/fcm_recipients/by_gateway.sql`; $$
 
 BEGIN;
 

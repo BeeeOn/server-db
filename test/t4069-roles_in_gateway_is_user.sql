@@ -4,7 +4,7 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
-\set query '$$ '`cat _api/roles_in_gateway.is_user.sql`' $$'
+\set query '$$ '`cat pgsql/roles_in_gateway/is_user.sql`' $$'
 
 BEGIN;
 

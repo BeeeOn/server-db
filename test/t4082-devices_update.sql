@@ -4,7 +4,7 @@ RESET client_min_messages;
 
 SET search_path TO beeeon, public;
 
-\set query '$$ BEGIN '`cat _api/devices.update.sql`; 'RETURN FOUND; END;' $$
+\set query '$$ BEGIN '`cat pgsql/devices/update.sql`; 'RETURN FOUND; END;' $$
 
 BEGIN;
 

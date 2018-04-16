@@ -6,7 +6,7 @@ SET search_path TO beeeon, public;
 
 BEGIN;
 
-SELECT plan(41);
+SELECT plan(45);
 
 SELECT has_table('devices');
 SELECT has_pk('devices');
@@ -61,6 +61,54 @@ SELECT col_has_check('devices', ARRAY['first_seen', 'last_seen']);
 SELECT has_column('devices', 'active_since');
 SELECT col_type_is('devices', 'active_since', 'timestamp without time zone');
 SELECT col_is_null('devices', 'active_since');
+
+SELECT lives_ok($$
+	INSERT INTO beeeon.gateways VALUES (
+		1240795450208837,
+		'testing',
+		0, 0, 0
+	)
+	$$);
+
+SELECT throws_ok($$
+	INSERT INTO beeeon.devices VALUES (
+		beeeon.to_device_id(11678152912333531136),
+		1240795450208837,
+		NULL,
+		'invalid name `',
+		0, 0, 0, 0,
+		beeeon.now_utc(),
+		beeeon.now_utc()
+	)
+	$$,
+	23514,
+	NULL);
+
+SELECT throws_ok($$
+	INSERT INTO beeeon.devices VALUES (
+		beeeon.to_device_id(11678152912333531136),
+		1240795450208837,
+		NULL,
+		'invalid name ' || e'\n',
+		0, 0, 0, 0,
+		beeeon.now_utc(),
+		beeeon.now_utc()
+	)
+	$$,
+	23514,
+	NULL);
+
+SELECT lives_ok($$
+	INSERT INTO beeeon.devices VALUES (
+		beeeon.to_device_id(11678152912333531136),
+		1240795450208837,
+		NULL,
+		'valid name .:!?()/,-_#''$€¥£©®',
+		0, 0, 0, 0,
+		beeeon.now_utc(),
+		beeeon.now_utc()
+	)
+	$$);
 
 SELECT finish();
 ROLLBACK;

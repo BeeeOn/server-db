@@ -6,7 +6,7 @@ SET search_path TO beeeon, public;
 
 BEGIN;
 
-SELECT plan(20);
+SELECT plan(23);
 
 SELECT has_table('gateways');
 SELECT has_pk('gateways');
@@ -34,6 +34,34 @@ SELECT col_is_null('gateways', 'longitude');
 SELECT has_column('gateways', 'timezone');
 SELECT col_type_is('gateways', 'timezone', 'character varying(64)');
 SELECT col_not_null('gateways', 'timezone');
+
+SELECT throws_ok($$
+	INSERT INTO beeeon.gateways VALUES (
+		1240795450208837,
+		'invalid name `',
+		0, 0, 0
+	)
+	$$,
+	23514,
+	NULL);
+
+SELECT throws_ok($$
+	INSERT INTO beeeon.gateways VALUES (
+		1240795450208837,
+		'invalid name ' || e'\n',
+		0, 0, 0
+	)
+	$$,
+	23514,
+	NULL);
+
+SELECT lives_ok($$
+	INSERT INTO beeeon.gateways VALUES (
+		1240795450208837,
+		'valid name .:!?()/,-_#''$€¥£©®',
+		0, 0, 0
+	)
+	$$);
 
 SELECT finish();
 ROLLBACK;

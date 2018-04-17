@@ -29,3 +29,7 @@ beeeon.sensor_history_last/add_contraint_check_nan 2018-02-27T22:31:57Z Jan Vikt
 beeeon.controls_fsm/add_contraint_check_nan 2018-02-27T22:41:08Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.control_fsm: add contraint to avoid NaN
 beeeon.control_fsm_last/add_contraint_check_nan 2018-02-28T12:41:02Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.control_fsm_last: add contraint to avoid NaN
 @v2018.01.1 2018-03-23T20:22:55Z Jan Viktorin <iviktorin@fit.vutbr.cz> # BeeeOn Server Database Schema v2018.01.1
+beeeon.gateways/check_name 2018-04-16T05:33:50Z viktorin <viktorin@ant-2.fit.vutbr.cz> # beeeon.gateways: check name to contain valid characters
+beeeon.devices/check_name 2018-04-16T06:06:13Z viktorin <viktorin@ant-2.fit.vutbr.cz> # beeeon.devices: check name to contain valid characters
+beeeon.users/check_first_and_last_name 2018-04-17T10:35:47Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.users: check first_name, last_name to contain valid characters
+beeeon.locations/check_name 2018-04-17T10:45:30Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.locations: check name to contain valid characters

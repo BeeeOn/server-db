@@ -80,7 +80,7 @@ SELECT lives_ok(
 );
 
 SELECT results_eq(
-	$$ SELECT value, at FROM beeeon.sensor_history_raw ORDER BY module_id, at $$,
+	$$ SELECT value, at FROM beeeon.sensor_history ORDER BY module_id, at $$,
 	$$ VALUES (
 		26::real,
 		timestamp '2017-07-19 13:42:58.000000'
@@ -134,7 +134,7 @@ SELECT lives_ok(
 );
 
 SELECT results_eq(
-	$$ SELECT value, at FROM beeeon.sensor_history_raw ORDER BY module_id, at $$,
+	$$ SELECT value, at FROM beeeon.sensor_history ORDER BY module_id, at $$,
 	$$ VALUES (
 		26::real,
 		timestamp '2017-07-19 13:42:58.000000'

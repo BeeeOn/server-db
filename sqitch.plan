@@ -37,3 +37,4 @@ beeeon.controls_fsm_last/fix_fsm_last_after_insert 2018-04-24T08:37:49Z Jan Vikt
 beeeon.functions/create_align_timestamp 2018-02-26T12:01:49Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.functions: create align_timestamp
 beeeon.sensor_history_raw/create_by_rename 2018-04-19T09:45:18Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.sensor_history_raw: rename from beeeon.sensor_history_recent
 beeeon.sensors/create 2018-04-18T13:59:35Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.sensors: create new table
+beeeon.sensor_history_raw/add_column_refid 2018-04-18T14:52:48Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.sensor_history_raw: add column refid

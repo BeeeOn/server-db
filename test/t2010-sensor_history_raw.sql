@@ -6,7 +6,7 @@ SET search_path TO beeeon, public;
 
 BEGIN;
 
-SELECT plan(21);
+SELECT plan(25);
 
 SELECT has_table('sensor_history_raw');
 SELECT has_pk('sensor_history_raw');
@@ -26,6 +26,11 @@ SELECT col_is_fk('sensor_history_raw', ARRAY['gateway_id', 'device_id']);
 SELECT has_column('sensor_history_raw', 'module_id');
 SELECT col_type_is('sensor_history_raw', 'module_id', 'smallint');
 SELECT col_not_null('sensor_history_raw', 'module_id');
+
+SELECT has_column('sensor_history_raw', 'refid');
+SELECT col_type_is('sensor_history_raw', 'refid', 'integer');
+SELECT col_not_null('sensor_history_raw', 'refid');
+SELECT col_is_fk('sensor_history_raw', 'refid');
 
 SELECT has_column('sensor_history_raw', 'at');
 SELECT col_type_is('sensor_history_raw', 'at', 'timestamp without time zone');

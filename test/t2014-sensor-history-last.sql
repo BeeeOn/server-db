@@ -63,10 +63,10 @@ SELECT is_empty(
 );
 
 ---
--- Insert into the sensor_history_raw and expect that
+-- Insert into the sensor_history and expect that
 -- the materialized view sensor_history_last is updated.
 ---
-INSERT INTO beeeon.sensor_history_raw
+INSERT INTO beeeon.sensor_history
 	(gateway_id, device_id, module_id, at, value)
 VALUES (
 	1240795450208837,
@@ -89,11 +89,11 @@ SELECT results_eq(
 );
 
 ---
--- Insert into the sensor_history_raw and expect that
+-- Insert into the sensor_history and expect that
 -- the materialized view sensor_history_last contains only
 -- the newer value.
 ---
-INSERT INTO beeeon.sensor_history_raw
+INSERT INTO beeeon.sensor_history
 	(gateway_id, device_id, module_id, at, value)
 VALUES (
 	1240795450208837,
@@ -116,11 +116,11 @@ SELECT results_eq(
 );
 
 ---
--- Insert old data into the sensor_history_raw and expect
+-- Insert old data into the sensor_history and expect
 -- that the materialized view sensor_history_last contains the
 -- same value - no update have been performed.
 ---
-INSERT INTO beeeon.sensor_history_raw
+INSERT INTO beeeon.sensor_history
 	(gateway_id, device_id, module_id, at, value)
 VALUES (
 	1240795450208837,

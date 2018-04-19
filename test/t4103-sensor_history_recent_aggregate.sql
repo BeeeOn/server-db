@@ -71,7 +71,7 @@ VALUES (
 --  max: 25
 --  avg: 22.5
 ---
-INSERT INTO sensor_history_raw (
+INSERT INTO sensor_history (
 	gateway_id,
 	device_id,
 	module_id,
@@ -215,7 +215,7 @@ VALUES (
 SELECT setseed(0);
 
 -- Insert deterministic random testing data with time-step of 5 seconds.
-INSERT INTO sensor_history_raw (
+INSERT INTO sensor_history (
 	gateway_id,
 	device_id,
 	module_id,
@@ -230,7 +230,7 @@ SELECT
 	random()::real
 FROM generate_series(1, 1000) AS i;
 
-SELECT is(COUNT(*), 1000::bigint) FROM sensor_history_raw
+SELECT is(COUNT(*), 1000::bigint) FROM sensor_history
 WHERE
 	gateway_id = 1416756209079877
 	AND

@@ -1,4 +1,4 @@
-INSERT INTO beeeon.sensor_history_raw (
+INSERT INTO beeeon.sensor_history (
 	gateway_id,
 	device_id,
 	module_id,

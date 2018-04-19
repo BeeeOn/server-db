@@ -2,7 +2,7 @@ SELECT
 	extract(epoch FROM s.at)::bigint,
 	s.value
 FROM
-	beeeon.sensor_history_recent AS s
+	beeeon.sensor_history_raw AS s
 WHERE
 	s.gateway_id = $1::bigint
 	AND

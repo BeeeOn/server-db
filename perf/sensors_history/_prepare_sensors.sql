@@ -20,7 +20,7 @@ sensors_stat AS (
 		MAX(at) AS at_max,
 		COUNT(*) AS count
 	FROM
-		beeeon.sensor_history_recent
+		beeeon.sensor_history_raw
 	GROUP BY
 		gateway_id, device_id, module_id
 )
@@ -81,7 +81,7 @@ BEGIN
 	---
 	-- 14 days of fake data 1 insert per 30 seconds.
 	---
-	INSERT INTO beeeon.sensor_history_recent
+	INSERT INTO beeeon.sensor_history_raw
 	SELECT
 		1115569803521760,
 		beeeon.to_device_id(11678152912333531136::numeric(20, 0)),
@@ -98,7 +98,7 @@ BEGIN
 	---
 	-- 31 days of fake data 1 insert per 5 minutes.
 	---
-	INSERT INTO beeeon.sensor_history_recent
+	INSERT INTO beeeon.sensor_history_raw
 	SELECT
 		1115569803521760,
 		beeeon.to_device_id(11678152912333531136::numeric(20, 0)),
@@ -126,7 +126,7 @@ BEGIN
 			MAX(at) AS at_max,
 			COUNT(*) AS count
 		FROM
-			beeeon.sensor_history_recent
+			beeeon.sensor_history_raw
 		GROUP BY
 			gateway_id, device_id, module_id
 	)

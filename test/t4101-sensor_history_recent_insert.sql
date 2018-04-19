@@ -8,13 +8,13 @@ SET search_path TO beeeon, public;
 
 BEGIN;
 
-PREPARE sensor_history_recent_insert
+PREPARE sensor_history_raw_insert
 AS :query;
 
 SELECT plan(11);
 
 SELECT throws_ok(
-	$$ EXECUTE sensor_history_recent_insert(
+	$$ EXECUTE sensor_history_raw_insert(
 		1240795450208837,
 		11678152912333531136::numeric(20, 0),
 		0::smallint,
@@ -47,7 +47,7 @@ VALUES (
 );
 
 SELECT lives_ok(
-	$$ EXECUTE sensor_history_recent_insert(
+	$$ EXECUTE sensor_history_raw_insert(
 		1240795450208837,
 		11678152912333531136::numeric(20, 0),
 		0::smallint,
@@ -58,7 +58,7 @@ SELECT lives_ok(
 );
 
 SELECT lives_ok(
-	$$ EXECUTE sensor_history_recent_insert(
+	$$ EXECUTE sensor_history_raw_insert(
 		1240795450208837,
 		11678152912333531136::numeric(20, 0),
 		0::smallint,
@@ -69,7 +69,7 @@ SELECT lives_ok(
 );
 
 SELECT lives_ok(
-	$$ EXECUTE sensor_history_recent_insert(
+	$$ EXECUTE sensor_history_raw_insert(
 		1240795450208837,
 		11678152912333531136::numeric(20, 0),
 		1::smallint,
@@ -80,7 +80,7 @@ SELECT lives_ok(
 );
 
 SELECT results_eq(
-	$$ SELECT value, at FROM beeeon.sensor_history_recent ORDER BY module_id, at $$,
+	$$ SELECT value, at FROM beeeon.sensor_history_raw ORDER BY module_id, at $$,
 	$$ VALUES (
 		26::real,
 		timestamp '2017-07-19 13:42:58.000000'
@@ -97,7 +97,7 @@ SELECT results_eq(
 );
 
 SELECT throws_ok(
-	$$ EXECUTE sensor_history_recent_insert(
+	$$ EXECUTE sensor_history_raw_insert(
 		1240795450208837,
 		11678152912333531136::numeric(20, 0),
 		1::smallint,
@@ -123,7 +123,7 @@ SELECT results_eq(
 );
 
 SELECT lives_ok(
-	$$ EXECUTE sensor_history_recent_insert(
+	$$ EXECUTE sensor_history_raw_insert(
 		1240795450208837,
 		11678152912333531136::numeric(20, 0),
 		1::smallint,
@@ -134,7 +134,7 @@ SELECT lives_ok(
 );
 
 SELECT results_eq(
-	$$ SELECT value, at FROM beeeon.sensor_history_recent ORDER BY module_id, at $$,
+	$$ SELECT value, at FROM beeeon.sensor_history_raw ORDER BY module_id, at $$,
 	$$ VALUES (
 		26::real,
 		timestamp '2017-07-19 13:42:58.000000'
@@ -168,7 +168,7 @@ SELECT results_eq(
 );
 
 SELECT throws_ok(
-	$$ EXECUTE sensor_history_recent_insert(
+	$$ EXECUTE sensor_history_raw_insert(
 		1240795450208837,
 		11678152912333531136::numeric(20, 0),
 		1::smallint,

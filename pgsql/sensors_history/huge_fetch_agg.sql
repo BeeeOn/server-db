@@ -19,7 +19,7 @@ SELECT
 	MIN(s.value)::real AS min,
 	MAX(s.value)::real AS max
 FROM
-	beeeon.sensor_history_recent AS s,
+	beeeon.sensor_history_raw AS s,
 	input
 WHERE
 	s.gateway_id = input.gateway_id

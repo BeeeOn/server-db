@@ -10,28 +10,32 @@ input AS (
 )
 SELECT
 	extract(epoch FROM
-		s.at - interval '1 second' * (
-			(60 * date_part('minute', s.at)::bigint
-				+ date_part('second', s.at)::bigint)
+		r.at - interval '1 second' * (
+			(60 * date_part('minute', r.at)::bigint
+				+ date_part('second', r.at)::bigint)
 			% input.secs_interval)
 	)::bigint AS at,
-	AVG(s.value)::real AS avg,
-	MIN(s.value)::real AS min,
-	MAX(s.value)::real AS max
+	AVG(r.value)::real AS avg,
+	MIN(r.value)::real AS min,
+	MAX(r.value)::real AS max
 FROM
-	beeeon.sensor_history AS s,
+	beeeon.sensor_history_raw AS r,
 	input
 WHERE
-	s.gateway_id = input.gateway_id
+	r.refid = (SELECT refid
+		FROM beeeon.sensors
+		WHERE
+			gateway_id = input.gateway_id
+			AND
+			device_id = beeeon.to_device_id(input.device_id)
+			AND
+			module_id = input.module_id
+		LIMIT 1)
 	AND
-	s.device_id = beeeon.to_device_id(input.device_id)
+	input.start_ts <= r.at
 	AND
-	s.module_id = input.module_id
+	r.at < input.end_ts
 	AND
-	input.start_ts <= s.at
-	AND
-	s.at < input.end_ts
-	AND
-	s.value IS NOT NULL
+	r.value IS NOT NULL
 GROUP BY 1
 ORDER BY 1

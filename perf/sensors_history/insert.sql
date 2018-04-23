@@ -38,5 +38,3 @@ END;
 $$;
 
 ROLLBACK;
-
-ROLLBACK;

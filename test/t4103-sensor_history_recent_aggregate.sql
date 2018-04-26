@@ -141,14 +141,14 @@ SELECT results_eq(
 );
 
 SELECT results_eq(
-	$$ SELECT as_utc_timestamp(at), avg, min, max FROM sensor_history_huge_fetch_agg(
+	$$ SELECT as_utc_timestamp(at) AS at, avg, min, max FROM sensor_history_huge_fetch_agg(
 		1240795450208837::bigint,
 		11678152912333531136::numeric(20, 0),
 		0::smallint,
 		extract(epoch FROM timestamp '2017-7-20 13:00:00')::bigint,
 		extract(epoch FROM timestamp '2017-7-20 13:00:31')::bigint,
 		10
-	) $$,
+	) ORDER BY at $$,
 	$$ VALUES
 		-- the first is not aggregated with anything
 		(timestamp '2017-7-20 13:00:00', 20::real, 20::real, 20::real),
@@ -161,14 +161,14 @@ SELECT results_eq(
 );
 
 SELECT results_eq(
-	$$ SELECT as_utc_timestamp(at), avg, min, max FROM sensor_history_huge_fetch_agg(
+	$$ SELECT as_utc_timestamp(at) AS at, avg, min, max FROM sensor_history_huge_fetch_agg(
 		1240795450208837::bigint,
 		11678152912333531136::numeric(20, 0),
 		0::smallint,
 		extract(epoch FROM timestamp '2017-7-20 13:00:00')::bigint,
 		extract(epoch FROM timestamp '2017-7-20 13:00:31')::bigint,
 		15
-	) $$,
+	) ORDER BY at $$,
 	$$ VALUES
 		(timestamp '2017-7-20 13:00:00', (20 + 21)::real / 2::real, 20::real, 21::real),
 		(timestamp '2017-7-20 13:00:15', (22 + 23 + 24)::real / 3::real, 22::real, 24::real),
@@ -179,14 +179,14 @@ SELECT results_eq(
 );
 
 SELECT results_eq(
-	$$ SELECT as_utc_timestamp(at), avg, min, max FROM sensor_history_huge_fetch_agg(
+	$$ SELECT as_utc_timestamp(at) AS at, avg, min, max FROM sensor_history_huge_fetch_agg(
 		1240795450208837::bigint,
 		11678152912333531136::numeric(20, 0),
 		0::smallint,
 		extract(epoch FROM timestamp '2017-7-20 13:00:00')::bigint,
 		extract(epoch FROM timestamp '2017-7-20 13:00:31')::bigint,
 		30
-	) $$,
+	) ORDER BY at $$,
 	$$ VALUES
 		(timestamp '2017-7-20 13:00:00', (20 + 21 + 22 + 23 + 24)::real / 5::real, 20::real, 24::real),
 		(timestamp '2017-7-20 13:00:30', 25::real, 25::real, 25::real)
@@ -268,14 +268,14 @@ SELECT results_eq(
 SELECT setseed(0);
 
 SELECT results_eq(
-	$$ SELECT as_utc_timestamp(at), avg, min, max FROM sensor_history_huge_fetch_agg(
+	$$ SELECT as_utc_timestamp(at) AS at, avg, min, max FROM sensor_history_huge_fetch_agg(
 		1416756209079877::bigint,
 		11678152912333531137::numeric(20, 0),
 		0::smallint,
 		extract(epoch FROM timestamp '2017-7-20 13:00:00')::bigint,
 		extract(epoch FROM timestamp '2017-7-20 14:24:00')::bigint,
 		10
-	) $$,
+	) ORDER BY at $$,
 	$$
 	-- generate the same random sequence but as two values a row
 	WITH r AS (

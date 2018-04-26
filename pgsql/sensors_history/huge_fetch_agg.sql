@@ -1,10 +1,5 @@
 SELECT
-	extract(epoch FROM
-		r.at - interval '1 second' * (
-			(60 * date_part('minute', r.at)::bigint
-				+ date_part('second', r.at)::bigint)
-			% $6::integer)
-	)::bigint AS at,
+	extract(epoch from beeeon.align_timestamp(r.at, $6::integer))::bigint AS at,
 	AVG(r.value)::real AS avg,
 	MIN(r.value)::real AS min,
 	MAX(r.value)::real AS max

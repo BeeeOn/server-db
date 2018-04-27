@@ -91,7 +91,7 @@ SELECT is(COUNT(*), 5::bigint) FROM devices;
 ---
 -- Insert some data for devices with data.
 ---
-INSERT INTO beeeon.sensor_history_recent VALUES (
+INSERT INTO beeeon.sensor_history VALUES (
 	1240795450208837::bigint,
 	to_device_id(11678152912333531136::numeric(20, 0)),
 	0,

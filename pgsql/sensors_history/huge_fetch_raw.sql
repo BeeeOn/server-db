@@ -1,17 +1,21 @@
 SELECT
-	extract(epoch FROM s.at)::bigint,
-	s.value
+	extract(epoch FROM r.at)::bigint,
+	r.value
 FROM
-	beeeon.sensor_history_recent AS s
+	beeeon.sensor_history_raw AS r
 WHERE
-	s.gateway_id = $1::bigint
+	r.refid = (SELECT refid
+		FROM beeeon.sensors
+		WHERE
+			gateway_id = $1::bigint
+			AND
+			device_id = beeeon.to_device_id($2::numeric(20, 0))
+			AND
+			module_id = $3::smallint
+		LIMIT 1)
 	AND
-	s.device_id = beeeon.to_device_id($2::numeric(20, 0))
+	beeeon.as_utc_timestamp($4::bigint) <= r.at
 	AND
-	s.module_id = $3::smallint
-	AND
-	beeeon.as_utc_timestamp($4::bigint) <= s.at
-	AND
-	s.at < beeeon.as_utc_timestamp($5::bigint)
+	r.at < beeeon.as_utc_timestamp($5::bigint)
 ORDER BY
-	s.at
+	r.at

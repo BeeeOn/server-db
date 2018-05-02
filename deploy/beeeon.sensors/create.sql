@@ -51,6 +51,10 @@ GRANT SELECT, INSERT, UPDATE, DELETE
 	ON TABLE beeeon.sensors
 	TO beeeon_user;
 
+GRANT USAGE, SELECT
+	ON SEQUENCE beeeon.sensors_refid_seq
+	TO beeeon_user;
+
 ---
 -- Initialize a single record in the sensors table
 -- if no such exists yet - generic function.

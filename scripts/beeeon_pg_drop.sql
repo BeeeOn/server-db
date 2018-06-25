@@ -22,8 +22,8 @@ SELECT 'failed, try "psql -v force=true ..."' WHERE NOT :force;
 BEGIN;
 
 REVOKE ALL ON DATABASE :dbname FROM beeeon_admin;
-DROP ROLE beeeon_admin;
 
 END;
 
 DROP DATABASE :dbname;
+DROP ROLE IF EXISTS beeeon_admin;

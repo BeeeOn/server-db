@@ -40,3 +40,4 @@ beeeon.sensors/create 2018-04-18T13:59:35Z Jan Viktorin <iviktorin@fit.vutbr.cz>
 beeeon.sensor_history_raw/add_column_refid 2018-04-18T14:52:48Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.sensor_history_raw: add column refid
 beeeon.sensor_history/create 2018-04-19T12:19:32Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.sensor_history: create new insertable view
 beeeon.sensor_history_raw/drop_unneeded_columns 2018-04-18T15:37:08Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.sensor_history_raw: drop unneeded columns
+@v2018.04.1 2018-07-12T18:12:59Z Jan Viktorin <iviktorin@fit.vutbr.cz> # BeeeOn Server Database Schema v2018.04.1

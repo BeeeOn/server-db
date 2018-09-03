@@ -30,8 +30,10 @@ auto_deploy()
 # Execute pg_prove to test the database setup.
 auto_prove()
 {
+	pushd pgsql
 	pg_prove -a "${RESULT_FILE}" -h "${2}" -p "${3}" -U "${4}" -d "${5}" \
 		test/t*.sql || kill_and_die ${1} "pg_prove failed"
+	popd
 }
 
 # Revert the current sqitch database setup to make sure that

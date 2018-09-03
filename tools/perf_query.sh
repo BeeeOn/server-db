@@ -18,12 +18,16 @@ psql_execute_query()
 
 	path=`query_to_path "${query}"`
 
+	pushd pgsql
+
 	if [ ! -f "${path}.sql" ]; then
 		die "no such ${path}.sql"
 	fi
 
 	echo "# ${path}.sql" >&2
 	psql -X "$@" -f "${path}.sql"
+
+	popd
 }
 
 # Process PostgreSQL query plan from input. It can also process

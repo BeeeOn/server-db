@@ -1,6 +1,6 @@
 #! /bin/sh
 
-test -z "${RESULT_FILE}" && RESULT_FILE=result.tgz
+test -z "${RESULT_FILE}" && RESULT_FILE=`pwd`/result.tgz
 
 die()
 {
@@ -30,10 +30,8 @@ auto_deploy()
 # Execute pg_prove to test the database setup.
 auto_prove()
 {
-	pushd pgsql
 	pg_prove -a "${RESULT_FILE}" -h "${2}" -p "${3}" -U "${4}" -d "${5}" \
 		test/t*.sql || kill_and_die ${1} "pg_prove failed"
-	popd
 }
 
 # Revert the current sqitch database setup to make sure that
@@ -70,4 +68,6 @@ auto_test_run()
 }
 
 dir=`dirname $0`
-${dir}/postgresql.py | auto_test_run
+pgsql_start=`realpath ${dir}/postgresql.py`
+
+cd pgsql && (${pgsql_start} | auto_test_run)

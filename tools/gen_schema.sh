@@ -71,4 +71,6 @@ gen_schema()
 }
 
 dir=`dirname $0`
-${dir}/postgresql.py | gen_schema
+pgsql_start=`realpath ${dir}/postgresql.py`
+
+cd pgsql && (${pgsql_start} | gen_schema)

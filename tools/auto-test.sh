@@ -1,6 +1,6 @@
 #! /bin/sh
 
-test -z "${RESULT_FILE}" && RESULT_FILE=result.tgz
+test -z "${RESULT_FILE}" && RESULT_FILE=`pwd`/result.tgz
 
 die()
 {
@@ -68,4 +68,6 @@ auto_test_run()
 }
 
 dir=`dirname $0`
-${dir}/postgresql.py | auto_test_run
+pgsql_start=`realpath ${dir}/postgresql.py`
+
+cd pgsql && (${pgsql_start} | auto_test_run)

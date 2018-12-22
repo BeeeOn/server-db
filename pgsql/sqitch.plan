@@ -43,3 +43,4 @@ beeeon.sensor_history_raw/drop_unneeded_columns 2018-04-18T15:37:08Z Jan Viktori
 @v2018.04.1 2018-07-12T18:12:59Z Jan Viktorin <iviktorin@fit.vutbr.cz> # BeeeOn Server Database Schema v2018.04.1
 beeeon.controls_fsm_last/fix_fsm_last_after_update 2018-07-26T13:23:10Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.controls_fsm_last: fix fsm_last_after_update
 @v2018.07.1 2018-10-02T17:49:01Z Jan Viktorin <iviktorin@fit.vutbr.cz> # BeeeOn Server Database Schema v2018.07.1
+beeeon.gateways_messages/create 2018-12-22T16:30:23Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.gateways_messages: create new table

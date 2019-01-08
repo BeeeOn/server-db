@@ -27,6 +27,8 @@ if [ -z "${action}" ] || [ "${action}" = "help" ]; then
 	echo "Actions:"
 	echo "  help - print help"
 	echo "  deploy - deploy changes to database (interactive)"
+	echo "  revert - revert changes from database (interactive)"
+	echo "  log    - display log of database changes (interactive)"
 	echo "  status - report status"
 	echo ""
 	echo "Environment variables to override:"
@@ -128,6 +130,12 @@ sqitch_go()
 	case "$1" in
 	deploy)
 		as_user "${DB_USER}" ${SQITCH_BIN} deploy ${SQITCH_ARGS}
+	;;
+	revert)
+		as_user "${DB_USER}" ${SQITCH_BIN} revert ${SQITCH_ARGS}
+	;;
+	log)
+		as_user "${DB_USER}" ${SQITCH_BIN} log ${SQITCH_ARGS}
 	;;
 	status)
 		as_user "${DB_USER}" ${SQITCH_BIN} status ${SQITCH_ARGS}

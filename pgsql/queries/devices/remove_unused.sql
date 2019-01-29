@@ -12,7 +12,7 @@ WHERE
 	AND NOT EXISTS (
 		SELECT 1
 		FROM
-			beeeon.sensor_history AS s
+			beeeon.sensor_history_last AS s
 		WHERE
 			s.gateway_id = d.gateway_id
 			AND

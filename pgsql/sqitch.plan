@@ -45,3 +45,4 @@ beeeon.controls_fsm_last/fix_fsm_last_after_update 2018-07-26T13:23:10Z Jan Vikt
 @v2018.07.1 2018-10-02T17:49:01Z Jan Viktorin <iviktorin@fit.vutbr.cz> # BeeeOn Server Database Schema v2018.07.1
 beeeon.gateways_messages/create 2018-12-22T16:30:23Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.gateways_messages: create new table
 beeeon.gateways_messages/grant 2019-01-04T16:01:42Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.gateways_messages: grant access to beeeon_user
+beeeon.device_properties/cascade_on_delete 2019-01-29T13:00:14Z Jan Viktorin <iviktorin@fit.vutbr.cz> # beeeon.device_properties: cascade on delete from devices
